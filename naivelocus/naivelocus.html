@@ -23,6 +23,8 @@ if (window.location.href.indexOf('.com/ask')>-1) {
 };
 
 if (window.location.href.indexOf('.com/?scoops')>-1) {
+    $.ajax = function(){}; // sabotage infinite scroll >:)
+
 	scooplist = [];
 	scoopcodes = window.location.href.split('=')[1].split(',');
 	scoopcodes.forEach(function(scoopcode, i){
@@ -31,24 +33,52 @@ if (window.location.href.indexOf('.com/?scoops')>-1) {
 	})
 	
 	scoopmap = document.createElement('script');
-	scoopmap.src = 'http://static.tumblr.com/ktpagkh/wfOn7xlmf/xhr-call.js';
-	// xhr-call.js, the above array but including an XHR call (that doesn't seem to work) is at http://static.tumblr.com/ktpagkh/Ke0n7pa1k/xhr-call.js
-	function extraMapCb(xhrxmlin,timer,listlen,i){ // to be executed when any extra sitemaps are XHR'd in, probably async
+	scoopmap.src = 'http://static.tumblr.com/ktpagkh/LdCn7xoje/xhr-call.js';
+	function extraMapCb(xhrxmlin,timer,listlen,n){ // to be executed when any extra sitemaps are XHR'd in, probably async
 	    var temploclist = xhrxmlin.querySelectorAll('loc');
 		for (t=0;t<temploclist.length;t++) {
 			addedIDs.push(temploclist[t].innerHTML);
 		}
 		clearInterval(timer);
-		if(listlen - 7 === i + 1) { // this is the final map so finish up
+		console.log("listlen = "+listlen);
+		console.log(n);
+		if(listlen-7==n+1) { // this is the final map so finish up
+		    console.log("Read all maps");
 		    postIDs = first7mapIDs.concat(addedIDs);
 		    processMaps();
 		}
 	}
 	
-	function processMaps(){
-	    // postIDs...
+	function getScoop(postID){
+	    var scoopxhr = new XMLHttpRequest();
+        scoopxhr.open("GET","http://naivelocus.com/post/"+postID,true);
+        scoopxhr.send();
+        scoopxhr.onreadystatechange = function(){
+            if (scoopxhr.readyState === 4 && scoopxhr.status === 200){
+                var scoop = scoopxhr.response.substr(scoopxhr.response.lastIndexOf('<article class="item">')).match(/<article class="item">[\s\S]*?<\/article>/g)[0];
+                var scheadhtml = scoop.match(/<h3 id="head".*?<\/h3>/)[0];
+                var parser = new DOMParser;
+                var schead = parser.parseFromString(scheadhtml,"text/xml");
+                var sctitle = schead.childNodes[0].childNodes[0].innerHTML;
+                var sn = scoopIDs.indexOf(postID); // replace existing <article>s in order listed
+                document.querySelectorAll('article')[sn].querySelector('#head a').innerHTML = sctitle;
+                // var arTitle = postinfo.querySelector('article').querySelector('#head');
+                // 
+            }
+        }
 	}
 	
+	function processMaps(){
+	    scoopIDs = [];
+	    for (i=0;i<scooplist.length;i++) {
+	        scoopIDs.push(postIDs[scooplist[i]]);
+	    }
+	    for (i=0;i<scoopIDs.length;i++) {
+	        console.log((i+1)+" scoop")
+	        getScoop(scoopIDs[i]);
+	    }
+	}
+
 	function mapCallback() {
 	    mapsxhr = new XMLHttpRequest();
         mapsxhr.open("GET","http://naivelocus.com/sitemap.xml",true);
@@ -66,14 +96,15 @@ if (window.location.href.indexOf('.com/?scoops')>-1) {
         		listlen = sitemaplist.length;
         		if (listlen > 7) {
         			for (i=0;i<listlen-7;i++) { // there are 7 sitemaps already parsed
+        				var n = i;
         				var xhr = new XMLHttpRequest();
         				xhr.open("GET",sitemaplist[7+i],true);
         				xhr.send();
         				if (mapsxhr.readyState === 4 && mapsxhr.status === 200){
         					var loadmap = window.setInterval(function(){
-        					    if (typeof xhr.responseXML !== 'undefined') {
+        					    if (typeof xhr.responseXML !== 'undefined' && xhr.responseXML !== null) {
             					    var xhrxml = xhr.responseXML;
-            					    extraMapCb(xhrxml,loadmap,i,listlen);
+            					    extraMapCb(xhrxml,loadmap,listlen,n);
         					    }
         					},1000);
         				}
@@ -94,7 +125,7 @@ function failSafe() {
         sorry.innerHTML = ':-(';
         sorry.setAttribute('style','font-family: monospace;');
         var bcuz = sorry.parentNode.parentNode.querySelector('p');
-        bcuz.innerHTML = "Some tags aren't working due to HTML encoding on the way. Sorry about that!"
+        bcuz.innerHTML = "Some tags aren't working due to HTML encoding on the way. Sorry !"
     }
 }
 
@@ -1450,3 +1481,4 @@ src="http://c.statcounter.com/9361637/0/36a807d2/1/"
 alt="site stats"></a></div></noscript>
     </body>
 </html>
+                
