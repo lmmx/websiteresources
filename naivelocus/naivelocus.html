@@ -93,11 +93,11 @@ if (window.location.href.indexOf('.com/?scoops')>-1) {
 								var artspacer = artdims[a][b][0]-(artdims[a][b-1][0]+artdims[a][b-1][1]);
 								if (artspacer<0){
 									document.querySelectorAll('article')[artdims[a][b][2]].style.top = (artdims[a][b-1][0]+artdims[a][b-1][1])+'px';
+								}
 								if (b=artdims[a].length-1){
 									var maxtop = parseInt(document.querySelectorAll('article')[artdims[a][b][2]].style.top.replace('px',''));
 									var maxheight = document.querySelectorAll('article')[artdims[a][b][2]].offsetHeight;
 									maxs.push(maxtop+maxheight);
-								}
 								}
 							}
 						document.getElementById('content').style.height = Math.max.apply(null, maxs)+'px';
@@ -129,7 +129,7 @@ document.querySelectorAll('article')[c].innerHTML = document.querySelectorAll('a
                 }
         stackEm();
         setTimeout(function(){stackEm();},0);
-        window.onscroll = function(stackEm();window.onscroll = null;);
+        // window.onscroll = function(){stackEm();window.onscroll = null;}
         linksonshow = document.querySelectorAll('article #link');
 	    for (l=0;l<linksonshow.length;l++){
 	        lelink = linksonshow[l];
@@ -158,11 +158,11 @@ document.querySelectorAll('article')[c].innerHTML = document.querySelectorAll('a
     			var artspacer = artdims[a][b][0]-(artdims[a][b-1][0]+artdims[a][b-1][1]);
     			if (artspacer<0){
     				document.querySelectorAll('article')[artdims[a][b][2]].style.top = (artdims[a][b-1][0]+artdims[a][b-1][1])+'px';
-    			if (b=artdims[a].length-1){
-    				var maxtop = parseInt(document.querySelectorAll('article')[artdims[a][b][2]].style.top.replace('px',''));
-    				var maxheight = document.querySelectorAll('article')[artdims[a][b][2]].offsetHeight;
-    				maxs.push(maxtop+maxheight);
-    			}
+        			if (b=artdims[a].length-1){
+        				var maxtop = parseInt(document.querySelectorAll('article')[artdims[a][b][2]].style.top.replace('px',''));
+        				var maxheight = document.querySelectorAll('article')[artdims[a][b][2]].offsetHeight;
+        				maxs.push(maxtop+maxheight);
+        			}
     			}
     		}
     	document.getElementById('content').style.height = (Math.max.apply(null, maxs)+20)+'px';
