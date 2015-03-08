@@ -1381,4 +1381,3 @@ background: rgba(255, 255, 255, 0.7) !important;
     	font-weight:normal;
     }
 h1,h2,h3,h4,h5,h6{font-style:normal;font-weight:normal;}hr{background-color: #7EB79E;}
-#content .post.reblog .info a.permalink:before{content:"{lang:Reblogged} ";}
