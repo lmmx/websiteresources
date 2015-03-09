@@ -1256,8 +1256,8 @@ background: rgba(255, 255, 255, 0.7) !important;
         margin-left: 0;
     }
     
-    div#page.indexpage div.reblog.last_promo_post {
-        display: none; /* one off self repost */
+    div#page.indexpage div.reblog {
+        display: none; /* low key */
     }
     
     li.tumblelog_medusas-pubichair {
