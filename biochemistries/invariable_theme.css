@@ -1378,4 +1378,5 @@ background: rgba(255, 255, 255, 0.7) !important;
     .post p,sub,.post div span, .post li, .post p *, input, #description, .info, #footer, #CCBYlicense{
     	font-weight:normal;
     }
-h1,h2,h3,h4,h5,h6{font-style:normal;font-weight:normal;}hr{background-color: #7EB79E;}
+h1,h2,h3,h4,h5,h6{font-style:normal;font-weight:normal;}
+hr{background-color: #B0CFC2;} #page.permalinkpage hr {width: 50%; margin: auto;}
