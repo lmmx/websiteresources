@@ -1215,7 +1215,7 @@ background: rgba(255, 255, 255, 0.7) !important;
         transition: opacity 1s ease-out;
     }
     
-    div.fb-like, #sharePanel.fadeintwo ~ .fb-like {
+    div.fb-share-button, #sharePanel.fadeintwo ~ .fb-share-button {
         z-index: -1;
         overflow: hidden;
         opacity: 0;
@@ -1234,19 +1234,19 @@ background: rgba(255, 255, 255, 0.7) !important;
     	display: none; /* Unlike */
     }
     
-    .fb-like:hover {
+    .fb-share-button:hover {
         opacity: 1;
         z-index: 1;
     }
     
-    #sharePanel.fbshow ~ .fb-like, .fb-like:hover {
+    #sharePanel.fbshow ~ .fb-share-button, .fb-share-button:hover {
         width:96px;
         margin-left: 0;
         opacity: 1;
         z-index: 1;
     }
     
-    .fb-like span {
+    .fb-share-button span {
         margin-left: -48px;
         -webkit-transition: all 1s ease-out 1s;
         -moz-transition: all 1s ease-out 1s;
@@ -1255,7 +1255,7 @@ background: rgba(255, 255, 255, 0.7) !important;
         transition: all 1s ease-out 1s;
     }
     
-    #sharePanel.fbshow ~ .fb-like span, .fb-like:hover span {
+    #sharePanel.fbshow ~ .fb-share-button span, .fb-share-button:hover span {
         margin-left: 0;
     }
     
