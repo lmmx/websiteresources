@@ -1242,7 +1242,7 @@ background: rgba(255, 255, 255, 0.7) !important;
     }
     
     #sharePanel.fbshow ~ .fb-share-button, .fb-share-button:hover {
-        width:96px;
+        width: 57px;
         margin-left: 0;
         opacity: 1;
         z-index: 1;
