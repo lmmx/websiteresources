@@ -1219,9 +1219,8 @@ background: rgba(255, 255, 255, 0.7) !important;
         z-index: -1;
         overflow: hidden;
         opacity: 0;
-        top: 21px;
         width: 0;
-        left: 74px;
+        left: -102px;
         margin-left: 48px;
         position: relative;
         -webkit-transition: all 1s ease-out 1s;
@@ -1229,6 +1228,10 @@ background: rgba(255, 255, 255, 0.7) !important;
         -o-transition: all 1s ease-out 1s;
         -ms-transition: all 1s ease-out 1s;
         transition: all 1s ease-out 1s;
+    }
+    
+    ._51m- hCent {
+    	display: none; /* Unlike */
     }
     
     .fb-like:hover {
