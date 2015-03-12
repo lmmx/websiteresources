@@ -136,6 +136,11 @@ pre.fig-cap.main-fig.inline-cap {
         width: 217px !important;
         position: absolute !important;
     }
+    
+	    
+	div#page.indexpage pre.fig-cap.main-fig {
+		margin-top: -130px;
+	}
 }
 
 @media only screen and (min-width: 1140px) {
