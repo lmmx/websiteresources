@@ -481,6 +481,7 @@ function ajaxLoad(internal) {
     document.close();
     
     window.history.pushState(xmlhttp.responseText,document.pageTitle,xmlhttp.called_url);
+    	FB.XFBML.parse(); 
     }
     }
     
