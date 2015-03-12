@@ -16,7 +16,7 @@ pre.big-pre {
     padding-bottom: 14px;
 }
 
-pre.fig-cap {d
+pre.fig-cap {
     background: -webkit-linear-gradient(bottom, #FFD9D9 12%, #FFE0E0 30%, #FFE5E5 49%, #FCEAEA 70%, #FFF5F5 100%);
     background-color: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFD9D9), color-stop(50%,#FFE0E0), color-stop(51%,#FFE5E5), color-stop(100%,#FCEAEA));
     background: -moz-linear-gradient(bottom, #FFD9D9 12%, #FFE0E0 30%, #FFE5E5 49%, #FCEAEA 70%, #FFF5F5 100%);
