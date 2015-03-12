@@ -811,9 +811,20 @@ display: inline-block;
 em.highlight,#page 
 span.highlight{background:rgba(255,231,102,0.72);-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}#page 
 span.den{font-size:75%;}#page 
-span.num{font-size:75%;vertical-align:2ex;} /* #header */ #header,#footer{padding:1.8em;}#header 
-a#home{display:block;height:16px;left:2.4em;margin:-34px 0 0 -8px;position:fixed;width:20px;}
-#header #description {margin: -34px 0 0 12px;}
+span.num{font-size:75%;vertical-align:2ex;} /* #header */ #header,#footer{padding:1.8em;}
+#header {padding-top: 1.2em;}
+#header a#home {
+	display: block;
+	height: 16px;
+	left: 2.4em;
+	margin: -20px 0 0 -8px;
+	position: fixed;
+	width: 20px;
+}
+#header #description {
+	padding-top: 0;
+	margin: -34px 0 0 12px;
+}
 #header a#home img {
     vertical-align:baseline;
     width:20px;
