@@ -482,6 +482,9 @@ function ajaxLoad(internal) {
     
     window.history.pushState(xmlhttp.responseText,document.pageTitle,xmlhttp.called_url);
     	FB.XFBML.parse(); 
+    } else if (xmlhttp.readyState==4) {
+        // something went wrong, load traditionally
+        window.location.href = internal;
     }
     }
     
