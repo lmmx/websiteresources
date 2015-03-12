@@ -306,7 +306,7 @@ blockquote pre {
     background: rgba(113, 147, 255, 0.15);
 }
 
-a{text-decoration:none}
+a, div.info a:hover {text-decoration:none}
 blockquote p {
     -webkit-margin-before:0px;-webkit-margin-after:0px;
     -moz-margin-before:0px;-moz-margin-after:0px;
