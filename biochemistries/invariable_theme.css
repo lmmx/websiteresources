@@ -471,7 +471,7 @@ body{
 }
 blockquote{font-size:12px;line-height:1;padding-top:0px;clear:both;}
 code { padding: 1px 4px; font-size: 90% !important; color: #c7254e; background-color: #f9f4f2; padding-top: 0 !important; white-space: nowrap; border-radius: 3px; }
-code,pre{font-size:12px;line-height:1.4; padding-top:1em;padding-bottom:1em, clear:both;}
+code,pre{font-size:12px;line-height:1.4; padding-top:1em;padding-bottom:1em; clear:both;}
 .inlinecode {
     padding: 0.2em !important;
     margin: 0 !important;
