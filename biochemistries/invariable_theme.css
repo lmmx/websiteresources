@@ -162,6 +162,12 @@ pre.fig-cap.main-fig.inline-cap {
     #page.permalinkpage pre.glossary, #page.permalinkpage pre.fig-cap, #page.permalinkpage pre.collapsible {
         width: 380px !important;
     }
+    
+    #page.permalinkpage div.post_quote pre.glossary,
+    #page.permalinkpage div.post_quote pre.fig-cap,
+    #page.permalinkpage div.post_quote pre.collapsible {
+        width: 325px !important;
+    }
 }
     
 @media only screen and (min-width: 1600px) {
