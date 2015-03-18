@@ -108,21 +108,16 @@ else {
     }
     
 </style></noscript>
-<!--<script type="text/javascript">
-colSet()
-
+<script type="text/javascript">
 function colSet() { 
-        if(window.location.href.indexOf("?col") > -1) {
-        
-        var csscol = document.createElement("style");
-        csscol.type = "text/css";
-        csscol.innerHTML = "div.post { width:90% !important; float: right !important; margin-bottom: 20em !important; }";
-        document.getElementsByTagName("head")[0].appendChild(csscol);
-        }
-    }
-    
-    //could load from https://api.github.com/repos/lmmx/websiteresources/contents/fonts/SEGOEUIL.woff?callback=font over JSONP as base64
-</script>-->
+    if (window.location.href.indexOf("?col") == -1) return; // single coumn not specified
+    var csscol = document.createElement("style");
+    csscol.type = "text/css";
+    csscol.innerHTML = "@media only screen and (min-width: 860px) { #page.indexpage pre.glossary, #page.indexpage pre.fig-cap { margin-left: 521px !important; width: 217px !important; position: absolute !important; } div#page.indexpage pre.fig-cap.main-fig { margin-top: -130px !important; } #page.indexpage #content { margin-left: 5% !important; margin-right: 5% !important; } #page.indexpage #content { width: 500px !important; margin-left: auto; margin-right: auto; } }";
+    document.getElementsByTagName("head")[0].appendChild(csscol);
+}
+colSet();
+</script>
 <!-- <style type="text/css" id="fontload">
     @font-face{ 
         font-family: "SEGOEUIL";
