@@ -28,10 +28,10 @@ pre.glossary, pre.fig-cap {
     display: inline-block;
     margin-left: 4%;
     padding-bottom: 7px;
-    -webkit-transition: all 0.6s ease-out 0.2s;
-    -moz-transition: all 0.6s ease-out 0.2s;
-    -o-transition: all 0.6s ease-out 0.2s;
-    -ms-transition: all 0.6s ease-out 0.2s;
+    -webkit-transition: all 0.6s ease-in-out 0.2s;
+    -moz-transition: all 0.6s ease-in-out 0.2s;
+    -o-transition: all 0.6s ease-in-out 0.2s;
+    -ms-transition: all 0.6s ease-in-out 0.2s;
     transition: all 600ms ease-in-out 0.2s; 
 }
 
@@ -1556,7 +1556,8 @@ li.tumblelog_medusas-pubichair {
     -ms-transition: margin 0.5s ease-in;
     transition: margin 500ms ease-in;
 }#content h1 a,#content h2 a{text-decoration:none;}h1 strong{font-style:italic;font-weight:normal;font-size:65px;}.indexpage .post h1 strong{font-size:47px !important}#content ol#permalinkpagination,#content .post > .info ul.tags,#content .post_audio p.metadata span.trackname{display:block;margin:0.9em 0;padding:0;}#content ol#permalinkpagination{margin-bottom:2.7em;}#content .dashboard:not(.post){display:none;} /* #content .post */ #content .post{margin-bottom:5.4em;width:500px;}#content .post:not(.post_link) h1 a,#content .post:not(.post_link) h2 a{color:black;}#content .post img{max-width:100%;}#content .post_answer p.asker img{display:none;}#content .post_answer p.asker span:after{content:":";}#content .post_answer p.question{border-style:double;border-width:3px;padding:0.9em;}#content .post_audio p.metadata span.album:before{content:"\2014";margin-left:0.9em;margin-right:0.9em; white-space:nowrap;}div.post_quote:before {content: "\201c";font-size: 25em;font-family: 'Times New Roman';position: relative;opacity: 0.06;height: 0px;display: block;top: -104px;color: rgb(41, 180, 74);pointer-events:none;}#content .post_audio p.metadata span.trackname,#content .post_chat .label{font-weight:bold;}#content .post_audio p.audioplayer .audio_player{border-style:solid;border-width:1px;height:27px;margin-bottom:0.9em;width:207px;}#content .post_audio p.audioplayer span.download{margin-left:1.8em;}#content .post_chat span.label{margin-right:0.9em;}#content .post_link h1 a span:after,#content .post_link h2 a span:after{content:"\2192";padding-left:0.45em;}#content .post_photo p.container{position:relative;}#content .post_photo p.container a{display:block;}#content .post_photo p.container a.linkurl[href=""],#page.indexpage #content .post_photo p.container a.linkurl,#page.permalinkpage #content .post_photo p.container a.linkurl code{display:none;}
-#content .post_quote h1,#content .post_quote h2{font-size:2.2em;font-weight:normal;font-style:italic;line-height:1.2;}#content .post_quote h2 strong{font-style:normal;}#content .post_text a.readmore span:after{content:" →";}#content .post > .info{margin:0.9em 0;}#content .post > .info a{margin-right:1.8em;}#content .post > .info ul.tags li{list-style-type:none;}#content .post > .info ul.tags li a{margin-right:0;} /* #content #notes */ #content #notes{margin-bottom:5.4em;margin-top:-1.2em;width:915px;}#content #notes ol.notes{list-style-type:none;background:none !important;font-size: 18px;padding-top: 0.7em;padding-bottom: 0.5em;padding-left: 0.7em;line-height: 1.1;}#content #notes ol.notes img.avatar{display:none;}#content #notes ol.notes li.more_notes_link_container{margin-top:0.9em;text-align:left !important;} /* #footer */ #footer{clear:both;text-align:center;}#footer #anylastwords{margin:0 auto;}
+#content .post_quote h1,#content .post_quote h2{font-size:2.2em;font-weight:normal;font-style:italic;line-height:1.2;}#content .post_quote h2 strong{font-style:normal;}#content .post_text a.readmore span:after{content:" →";}#content .post > .info{margin:0.9em 0;}#content .post > .info a{margin-right:1.8em;}#content .post > .info ul.tags li{list-style-type:none;}#content .post > .info ul.tags li a{margin-right:0;} /* #content #notes */ #content #notes{margin-bottom:5.4em;margin-top:-1.2em;width:915px;}#content #notes ol.notes{list-style-type:none;background:none !important;font-size: 18px;padding-top: 0.7em;padding-bottom: 0.5em;padding-left: 0.7em;line-height: 1.1;}#content #notes ol.notes img.avatar{display:none;}#content #notes ol.notes li.more_notes_link_container{margin-top:0.9em;text-align:left !important;}
+/* #footer */ #footer{clear:both;text-align:center;}#footer #anylastwords{margin:0 auto;}
 #footer ul{padding:0; margin-top: 1.2em; text-align: center;}
 #footer ul#enabled{
 	font-size: 1.2em;
@@ -1567,6 +1568,41 @@ li.tumblelog_medusas-pubichair {
 transition: all 600ms ease-out 0.2s; 
 }
 #footer ul li{display:inline-block;margin-left:0.9em;margin-right:0.9em;}
+/* Too much:
+#footer li.page a {
+    padding: 11px 10px;
+    border-radius: 45px;
+    vertical-align: middle;
+    text-align: center;
+}
+#footer li.page a:hover {
+    background: #299F6D;
+    color: white !important;
+    text-decoration: none;
+    border: #299F6D;
+    text-shadow: none;
+}
+*/
+
+#footer li.page { line-height: 2.6; }
+
+#footer li.page a {
+    padding: 11px 10px;
+    border: 1px solid transparent;
+    border-radius: 45px;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-transition: border .3s ease-in-out;     
+    -moz-transition: border .3s ease-in-out;     
+    -o-transition: border .3s ease-in-out;     
+    -ms-transition: border .3s ease-in-out;     
+    transition: border 300ms ease-in-out;
+}
+#footer li.page a:hover {
+    /* background: white; implicit */
+    text-decoration: none;
+    border: 1px solid #1b7850;
+}
 /* #page.indexpage */
 #page.indexpage #content .post img{max-width:100%;}
 #page.indexpage #content .post_photo .html_photoset{overflow:hidden;}
