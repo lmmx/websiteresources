@@ -186,9 +186,9 @@ div.info .notecount * {
     font-family:{font:SubheaderFont}, 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
-div.post_quote h2.long a p {
-    font-family: "SEGOEUIL", 'SEGOEUIL', 'Segoeuil', 'SegoeUil', 'SegoeUIL', 'segoeuil', 'SEGOEUIL', 'Segoeuil', 'SegoeUil', 'SegoeUIL'  !important;
-}
+div.post_quote h2.long p, /* The bulk of multi-paragraph quotations */
+div.post_quote blockquote h2 em,
+/* NB This is confusing: BodyFont is (selectively) being set on headers... */
 
 pre.collapsible .collapsing-section,
 pre.collapsible .collapsing-section *,
