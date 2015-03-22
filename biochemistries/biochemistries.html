@@ -109,24 +109,14 @@ else {
     
 </style></noscript>
 <script type="text/javascript">
-function colSet() { 
-    if (window.location.href.indexOf("?col") == -1) return; // single coumn not specified
-    var csscol = document.createElement("style");
-    csscol.type = "text/css";
-    csscol.innerHTML = "@media only screen and (min-width: 860px) { #page.indexpage pre.glossary, #page.indexpage pre.fig-cap { margin-left: 521px !important; width: 217px !important; position: absolute !important; } div#page.indexpage pre.fig-cap.main-fig { margin-top: -130px !important; } #page.indexpage #content { margin-left: 5% !important; margin-right: 5% !important; } #page.indexpage #content { width: 500px !important; margin-left: auto; margin-right: auto; } }";
-    document.getElementsByTagName("head")[0].appendChild(csscol);
-    var internal_links = document.querySelectorAll('a[onclick^="ajaxLoad("], a.tc-link'); // lol http://stackoverflow.com/q/29120822/2668831
-    for (i=internal_links.length - 1; i > -1; i--) {
-        if (! /\?col/.test(internal_links[i].href)) {
-            internal_links[i].href += '?col';
-        }
-        internal_links[i].removeAttribute('onclick');
-    }
-    // I don't like this - even setting pre.glossary etc.'s width
-    // to 380px there's a weird vertical alignment error, not sure
-    // what the scaling on it is :-/
+function sneakyRename() {
+  if (window.history && window.history.replaceState) {
+    listingobj = JSON.parse('{"98651274326":"a-bioinformatics-walk-through-accessing-interfaces","93627278206":"pairing-and-stacking","99087270391":"systems-consequences-of-amplicon-formation-in-human-breast-cancer","98747455066":"gibbs-graphical-method","104293317361":"readcube-free-access","99987684211":"histone-modification-chromatin-signalling-and-structure","102462945826":"NoLS-charge-dependence","105463397986":"cochrane-ecig","104967247506":"comparison-of-geometric-motifs-common-on-greek","106792273506":"light-reg-miRNAs","106896871556":"mRNA-eukaryotic-ribosomal-interaction","105009233476":"seasons-tweetings","113037351906":"tamara-munzner-data-stories","107306256066":"miR17-92-structure","107135276326":"evolutionary-biochemistry","112368006111":"one-weird-rmd-trick","113259869341":"gdoc-rmd-gui","113902806836":"SICP-Perlis-foreword","114288240626":"Walden","105715861371":"AD-amyloid-hypothesis","91135554841":"molecular-motions-inside-the-cell","106999236456":"ars-tumorigenesis","99496457401":"chemistrynobel2014","107211261776":"post-transcriptional-circadian-genomics","107431933266":"evol-folding-opt","107499936546":"an-11-PUM-repeat-fold","112703796076":"modular-workbook"}');
+    var current_post_id = window.location.href.match(/\/(\d+?)\//)[1];
+    var current_pagename = listingobj[current_post_id];
+    if (current_pagename !== undefined) history.replaceState(null, null, current_pagename);
+  }
 }
-colSet();
 </script>
 <!-- <style type="text/css" id="fontload">
     @font-face{ 
@@ -1081,6 +1071,7 @@ if (history.pushState) {
     bqCites();
     captionHoverClassify();
     colSet();
+    sneakyRename();
     // p blocks containing captioned images now have class
     // "caption" so CSS3 element:hover + adjacent selector
     // can be used to expand the caption box
