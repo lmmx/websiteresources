@@ -1070,7 +1070,6 @@ if (window.history && history.pushState) {
     //inpostZoom();
     bqCites();
     captionHoverClassify();
-    colSet();
     sneakyRename();
     // p blocks containing captioned images now have class
     // "caption" so CSS3 element:hover + adjacent selector
@@ -1091,31 +1090,6 @@ if (window.history && history.pushState) {
 </script><div id="notes" onmouseover="noteHeight();" onmouseout="noteReset();">{PostNotes}</div>{/block:PostNotes}{/block:Posts}{block:IndexPage}{block:IfInfiniteScrolling}</div>{/block:IfInfiniteScrolling}{/block:IndexPage}</div>
 
 <div id="footer"> {block:IfAnyLastWords}<div id="anylastwords">{text:Any last words}</div>{/block:IfAnyLastWords}{block:Pagination}<div id="pagination">
-<script type="text/javascript">
- if(window.location.href.indexOf("?col") > -1)
- {
-     window.onload = function()
-     { 
-         
-         var changeUrls = document.getElementById("pagination").querySelectorAll("ul > li > a[href]");
-        var changetagUrls = document.getElementById("tagCloud").querySelectorAll("span > a[href]")
-        
-        for (var i = 0; i < changeUrls.length; i++) {
-        var currentUrl = changeUrls[i].getAttribute("href")
-        var newUrl = currentUrl.concat("?col")
-        changeUrls[i].setAttribute("href",newUrl);
-}
-
-        for (var i=0; i < changetagUrls.length; i++) {
-            var currenttagUrl = changetagUrls[i].getAttribute("href")
-            var newtagUrl = currenttagUrl.concat("?col")
-            changetagUrls[i].setAttribute("href",newtagUrl)
-        }
-        document.getElementById("oneCol").remove();
-        twoCol();
-     }
-     };
-</script>
 <p>{lang:Page CurrentPage of TotalPages}</p><ul class="pagenumbering">{block:PreviousPage}<li class="previouspage" align="center"><a href="{PreviousPage}"><span>{lang:Previous}</span></a></li>{/block:PreviousPage}{block:JumpPagination length="7"}{block:CurrentPage}<li><span class="currentpage">{PageNumber}</span></li>{/block:CurrentPage}{block:JumpPage}<li><a href="{URL}">{PageNumber}</a></li>{/block:JumpPage}{/block:JumpPagination}{block:NextPage}<li class="nextpage"><a href="{NextPage}"><span>{lang:Next}</span></a></li>{/block:NextPage}</ul></div>{/block:Pagination}</center><ul class="menu_b"><hf class="menu_b">
     
     <center><li class="menu_b"><a href="/archive"><img class="menu_b" src="http://media.tumblr.com/9aadb6cb7c5d7ffa266030bf220ee32a/tumblr_inline_mrn7nrhq1O1qz4rgp.png" title="View archive" width="50"></a></li>
