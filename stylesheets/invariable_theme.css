@@ -286,6 +286,12 @@ div.post p img, div.post p a img, div.post p iframe, blockquote img, blockquote 
     margin-top: 160px;
 }
 
+div.indexpage p.video-p {
+    float: right;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
 .wide-berth {
     margin-right: 169px;
     margin-bottom: 85px;
