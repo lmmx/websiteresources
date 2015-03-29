@@ -1444,7 +1444,8 @@ div#page.indexpage div.reblog {
     display: none; /* low key */
 }
 
-li.tumblelog_medusas-pubichair {
+li.tumblelog_medusas-pubichair,
+li.tumblelog_bonersnstuff {
     display: none; /* Jeez this site... */
 }
 
