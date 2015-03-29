@@ -1632,5 +1632,10 @@ a:active,hr,#header ul#enabled a[href*="/tggd_"],#content ol#permalinkpagination
 .post p,sub,.post div span, .post li, .post p *, input, #description, .info, #footer, #CCBYlicense{
 	font-weight:normal;
 }
+
+strong {
+    font-weight: bolder !important;
+}
+
 h1,h2,h3,h4,h5,h6{font-style:normal;font-weight:normal;}
 hr{background-color: #B0CFC2;} #page.permalinkpage hr {width: 50%; margin: auto;}
