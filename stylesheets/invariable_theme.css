@@ -349,6 +349,11 @@ blockquote p {
     margin-top:0px;margin-bottom:0px;
     -o-margin-before:0px;-o-margin-after:0px;
     }
+blockquote.link_og_blockquote {
+  font-size: smaller;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
 pre {
     tab-size: 15;
 background-color: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#E0E2FF), color-stop(50%,#E1E0FF), color-stop(51%,#E6F8E0), color-stop(100%,#E5E7FF));
