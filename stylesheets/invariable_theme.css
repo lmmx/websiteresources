@@ -1444,10 +1444,11 @@ div.fb-share-button, #sharePanel.fadeintwo ~ .fb-share-button {
     -ms-transition: all 0.5s ease-out 0.5s;
     transition: all 500ms ease-out 500ms;
 }
-
+/*
 div#page.indexpage div.reblog {
-    display: none; /* low key */
+    display: none;
 }
+*/
 
 li.tumblelog_medusas-pubichair,
 li.tumblelog_bonersnstuff {
