@@ -941,6 +941,7 @@ if (window.history && history.pushState) {
     }
     
     function doiInfo(doi) {
+        console.log(doi);
 	    var doienc = encodeURIComponent(doi);
 	    var doiXHR;
 	    window.XMLHttpRequest ? doiXHR=new XMLHttpRequest() : doiXHR=new ActiveXObject("Microsoft.XMLHTTP");
@@ -948,6 +949,7 @@ if (window.history && history.pushState) {
 	    doiXHR.addEventListener('load', function(){
 	      if (doiXHR.readyState==4 && doiXHR.status==200){
 	        var doi_resp = JSON.parse(doiXHR.responseText)[0];
+	        console.log(doi_resp);
 	        var authors = doi_resp.fullCitation.replace(/, \d{4}, .*$/, '')
 	          .split(',');
 	        var auths = authors.length;
@@ -959,7 +961,7 @@ if (window.history && history.pushState) {
 	            var auth_str = authors[0] + ',' + authors[1] + ' &' + authors[2];
 	        } else if (auths > 3) {
 	            var auth_str = authors[0] + ' et al.';
-	        } else break; // don't accept author-less entries
+	        } else auth_str = ''; // accept weird author-less entries
 	        var doi_cite = auth_str
 	          + ' ('
 	          + doi_resp.year
@@ -1001,7 +1003,7 @@ if (window.history && history.pushState) {
                     outPages[d].setAttribute("data-doi",DOImatch[0]);
                     if (outPages[d].getAttribute('title') !== null
                      && outPages[d].getAttribute('title') !== '') {
-                    	doilist.push([DOImatch[0],outPages[d].title.replace(/doi:\s?/gi,'').replace(doiRE,'')]);
+                    	doilist.push([DOImatch[0],outPages[d].title.replace(/doi:\s?/gi,'').replace(doiRE,''),origin]);
                      } else {
                      	// get title
                      	doiInfo(DOImatch[0]);
@@ -1035,6 +1037,8 @@ if (window.history && history.pushState) {
             }
         }
     }
+    
+    // maybe do a callback check for all DOIs to have been obtained
     
     JSONlist = [];
     
