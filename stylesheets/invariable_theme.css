@@ -1074,6 +1074,10 @@ svg * {
     display: inline-block;
 }
 
+.altmetric-embed.altmetric-hidden {
+    display: none !important;
+}
+
 div#_altmetric_popover_inner {
 background: rgba(255, 255, 255, 0.7) !important;
 }
