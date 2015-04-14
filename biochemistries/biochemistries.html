@@ -41,7 +41,6 @@ if (navigator.userAgent.indexOf("Internet Explorer")>-1||navigator.userAgent.ind
     fontload.setAttribute('id','fontload')
     fontload.innerHTML = "@font-face{ font-family: \"SEGOEUIL\"; src: local('☺'), url('http://static.tumblr.com/ktpagkh/utbnkthle/segoeuil.eot'); src: local('☺'), url('http://static.tumblr.com/ktpagkh/utbnkthle/segoeuil.eot?#iefix') format('embedded-opentype'), local('☺'), url('http://static.tumblr.com/ktpagkh/XVynkthmg/segoeuil.woff') format('woff'), local('☺'), url('http://static.tumblr.com/ktpagkh/wl2nktkvb/segoeuil.ttf') format('truetype'), local('☺'), url('http://static.tumblr.com/ktpagkh/4m0nktkwe/segoeuil.svg') format('svg'); font-weight: normal; } @font-face{ font-family: \"SEGOEUIL\", \"Helvetica Neue\", Arial, sans-serif; src: url('http://static.tumblr.com/ktpagkh/XSUnktky2/weblysleekuisb.eot'); src: url('http://static.tumblr.com/ktpagkh/XSUnktky2/weblysleekuisb.eot?#iefix') format('embedded-opentype'), url('http://static.tumblr.com/ktpagkh/Q7Qnktkyr/weblysleekuisb.woff') format('woff'), url('http://static.tumblr.com/ktpagkh/B9bnktkzb/weblysleekuisb.ttf') format('truetype'), url('http://static.tumblr.com/ktpagkh/lX3nktl0f/weblysleekuisb.svg') format('svg'); font-weight: bold; font-style: normal; } @font-face{ font-family: \"SEGOEUIL\", \"Helvetica Neue\", Arial, sans-serif; src: url('http://static.tumblr.com/ktpagkh/xZknktl27/weblysleekuili.eot'); src: url('http://static.tumblr.com/ktpagkh/xZknktl27/weblysleekuili.eot?#iefix') format('embedded-opentype'), url('weblysleekuili.woff') format('woff'), url('http://static.tumblr.com/ktpagkh/Mr8nle3wd/weblysleekuili.ttf') format('truetype'), url('http://static.tumblr.com/ktpagkh/7sAnle3yv/weblysleekuili.svg') format('svg'); font-style: italic; }";
     document.querySelector('head').appendChild(fontload);
-    console.log('loaded')
     }
 }
 else if (navigator.appVersion.indexOf("Win")>-1) {
@@ -644,8 +643,8 @@ function styleBadges() {
         hostdiv.appendChild(openarrow);
         hostdiv.appendChild(openbox);
     }
-}
-else if (document.querySelector('body[onscroll]')) {document.querySelector('body').removeAttribute('onscroll');}
+} else if (document.querySelector('body[onscroll]')) {document.querySelector('body').removeAttribute('onscroll');}
+
 }
 
 function spinBadge(badge) {
@@ -882,7 +881,6 @@ function bqCites(){
             bqbqC[e].parentNode.parentNode.parentNode.insertBefore(newbqc, bqbqC[e].parentNode.parentNode);
             newbqc.parentNode.setAttribute('class','transpbq');
             bqbqC[e].parentNode.parentNode.remove();
-            console.log(linkt);
         }
     }
 }
@@ -898,6 +896,20 @@ function captionHoverClassify() {
           captionedimgps.push(captionedimg.parentElement);
         }
       }
+    }
+}
+
+function CRbadgeTitles() {
+    console.log("Adding badge titles...")
+    badges_for_titles = document.querySelectorAll('div[data-doi][class="altmetric-embed"]:not([style])');
+    for (bft=0; bft<badges_for_titles.length; bft++) {
+        var badge_to_retitle = badges_for_titles[bft];
+        var badge_doi_target = badge_to_retitle.getAttribute('data-doi');
+        var link_target = badge_to_retitle.querySelector('a');
+        if (link_target.getAttribute('title') == null
+        ||  link_target.getAttribute('title') == ''  ) {
+            link_target.setAttribute('title', crossref_doi_citations[badge_doi_target]);
+        }
     }
 }
 
@@ -942,7 +954,6 @@ if (window.history && history.pushState) {
     }
     
     function doiInfo(doi) {
-        console.log(doi);
 	    var doienc = encodeURIComponent(doi);
 	    var doiXHR;
 	    window.XMLHttpRequest ? doiXHR=new XMLHttpRequest() : doiXHR=new ActiveXObject("Microsoft.XMLHTTP");
@@ -951,7 +962,6 @@ if (window.history && history.pushState) {
 	      crossref_retrieval_progress++;
 	      if (doiXHR.readyState==4 && doiXHR.status==200){
 	        var doi_resp = JSON.parse(doiXHR.responseText)[0];
-	        console.log(doi_resp);
 	        var authors = doi_resp.fullCitation.replace(/, \d{4}, .*$/, '')
 	          .split(',');
 	        var auths = authors.length;
@@ -971,12 +981,16 @@ if (window.history && history.pushState) {
 	          + doi_resp.title;
 	        
 	        crossref_retrieval_successes++;
-	        	 console.log(crossref_retrieval_progress);
 	        crossref_doi_citations[doi] = doi_cite;
 	      }
+	      
+	      if (crossref_retrieval_progress == crossref_retrieval_goal) {
+	          // edit titles
+	          CRbadgeTitles();
+	      }
+	      
 	    });
 	    crossref_retrieval_goal++;
-	 console.log(crossref_retrieval_goal);
 	    doiXHR.open('GET', 'http://search.crossref.org/dois?q=' + doienc, true);
 	    doiXHR.send();
 	}
@@ -1023,9 +1037,10 @@ if (window.history && history.pushState) {
         }
     }
     
-    // only write the badges to page (makeBadges) after retrieving titles from CrossRef where needed
-    
     makeBadges();
+    
+    // update the badges after retrieving titles from CrossRef where needed (async)
+    // but write badges to page first of all, as for some reason this stops double AJAX requests...
     
     /*
     function foo(data)
