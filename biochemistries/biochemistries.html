@@ -480,6 +480,7 @@ function ajaxLoad(internal) {
     window.history.pushState(xmlhttp.responseText,document.pageTitle,xmlhttp.called_url);
     sneakyRename();
     FB.XFBML.parse(); 
+    smoothPages();
     } else if (xmlhttp.readyState==4) {
         // something went wrong, load traditionally
         window.location.href = internal;
@@ -649,6 +650,7 @@ function styleBadges() {
         CRbadgeTitles();
     } else {
         document.querySelector('body').removeAttribute('onscroll');
+        delete badges_done; // reset for AJAX loaded pages (which retain window)
     }
 }
 }
