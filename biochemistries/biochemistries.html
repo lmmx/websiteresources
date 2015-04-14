@@ -731,18 +731,6 @@ function stepUp(a) {
     }
 }
 
-function gsq(JSON) { // global
-    year = JSON.data[0].scholar[0].facts[1].values[0].value;
-    url = JSON.data[0].scholar[0].url;
-    title = JSON.data[0].scholar[0].title;
-    cite = JSON.data[0].scholar[0].citedSources.citations[1].bibliographyText.replace(/<i>/g,'<em>').replace(/<\Wi>/g,'</em>');
-    cites = JSON.data[0].scholar[0].numCitations;
-    citelink = JSON.data[0].scholar[0].citedByUrl;
-    // origin = comebackhere?;
-    url.indexOf('/pmc/')>-1 ? pmcid = url.match(/(\d\d\d\d\d\d?\d?\d?\d?)\//)[1] : pmcid = null;
-    JSONlist.push(new GS(year,url,title,cite,cites,citelink,origin,pmcid));
-};
-
 function lrPage(e) {
 e = e || window.event;
 
@@ -940,6 +928,19 @@ if (window.history && history.pushState) {
     
     }
     
+    function makeBadges() {
+        for (l=0;l<doilist.length;l++){
+            newBadge = document.createElement('div');
+            newBadge.setAttribute('data-badge-popover','right');
+            newBadge.setAttribute('data-badge-type','medium-donut');
+            newBadge.setAttribute('origin',doilist[l][2]);
+            newBadge.setAttribute('data-doi',doilist[l][0]);
+            newBadge.setAttribute('data-hide-no-mentions','true');
+            newBadge.className = "altmetric-embed";
+            document.getElementById('altmetBox').appendChild(newBadge);
+        }
+    }
+    
     function doiInfo(doi) {
         console.log(doi);
 	    var doienc = encodeURIComponent(doi);
@@ -947,6 +948,7 @@ if (window.history && history.pushState) {
 	    window.XMLHttpRequest ? doiXHR=new XMLHttpRequest() : doiXHR=new ActiveXObject("Microsoft.XMLHTTP");
 	 
 	    doiXHR.addEventListener('load', function(){
+	      crossref_retrieval_progress++;
 	      if (doiXHR.readyState==4 && doiXHR.status==200){
 	        var doi_resp = JSON.parse(doiXHR.responseText)[0];
 	        console.log(doi_resp);
@@ -968,10 +970,13 @@ if (window.history && history.pushState) {
 	          + ') '
 	          + doi_resp.title;
 	        
-	        doilist.push([doi,doi_cite]);
+	        crossref_retrieval_successes++;
+	        	 console.log(crossref_retrieval_progress);
+	        crossref_doi_citations[doi] = doi_cite;
 	      }
 	    });
-	 
+	    crossref_retrieval_goal++;
+	 console.log(crossref_retrieval_goal);
 	    doiXHR.open('GET', 'http://search.crossref.org/dois?q=' + doienc, true);
 	    doiXHR.send();
 	}
@@ -979,100 +984,48 @@ if (window.history && history.pushState) {
     outPages = document.querySelectorAll("div#page.permalinkpage div.post a:not([href*='biochemistri.es']):not(.dsq-brlink):not(.permalink)");
     if (outPages.length>0 && !document.querySelector('div.altmetric-embed')) {
     doilist = [];
+    crossref_doi_citations = {};
+    crossref_retrieval_goal = 0;
+    crossref_retrieval_progress = 0; // see when ready to apply titles to badges
+    crossref_retrieval_successes = 0; // out of interest
+    
     for (d=0;d<outPages.length;d++) {
         doiRE = /\b(10[.][0-9]{4,}(?:[.][0-9]+)*\/(?:(?!["&\'<>])\S)+)\b/g;
+        origin = outPages[d].href;
         if (outPages[d].title.indexOf("doi:")!=-1) {
-            DOImatch = outPages[d].title.match(doiRE);
+            DOImatch = outPages[d].title.match(doiRE); // get DOI from link title
             if (DOImatch) {
-                if (doilist[0] && doilist.join().indexOf(DOImatch[0])==-1) {
-                outPages[d].setAttribute("data-doi",DOImatch[0]);
-                origin = outPages[d].href;
-                doilist.push([DOImatch[0],outPages[d].title.replace(/doi:\s?/gi,'').replace(doiRE,''),origin]);
-            }
-            else if (doilist.length<1) {
-                outPages[d].setAttribute("data-doi",DOImatch[0]);
-                origin = outPages[d].href;
-                doilist.push([DOImatch[0],outPages[d].title.replace(/doi:\s?/gi,'').replace(doiRE,''),origin]);
-            }
-            }
-        } else {
-            DOImatch = outPages[d].href.replace('%2F','/').match(doiRE);
-            if (DOImatch) {
-                if ( (doilist[0] && doilist.join().indexOf(DOImatch[0]==-1))
-                     || doilist.length < 1 ) {
+                if ((doilist[0] && doilist.join().indexOf(DOImatch[0])==-1)
+                || doilist.length<1) {
                     outPages[d].setAttribute("data-doi",DOImatch[0]);
-                    if (outPages[d].getAttribute('title') !== null
-                     && outPages[d].getAttribute('title') !== '') {
-                    	doilist.push([DOImatch[0],outPages[d].title.replace(/doi:\s?/gi,'').replace(doiRE,''),origin]);
-                     } else {
-                     	// get title
-                     	doiInfo(DOImatch[0]);
-                     }
+                    doilist.push([DOImatch[0],outPages[d].title.replace(/doi:\s?/gi,'').replace(doiRE,''),origin]);
                 }
             }
-            else if(typeof possibleCites == 'undefined') {
-                possCitelist = []; possCiteprep = [];
-                possibleCites = document.querySelectorAll('sub a');
-                for (p=0;p<possibleCites.length;p++) {
-                    poss = possibleCites[p];
-                    possCite = possibleCites[p].parentNode.parentNode;
-                    if (possCite.textContent.match(/\([12]\d\d\d\)/g) !== null) {
-                    possYear = possCite.textContent.match(/\([12]\d\d\d\)/g)[0];
-                    if (typeof possYear != 'undefined') {
-                        possTitle = possCite.querySelector('a').textContent;
-                        possLink = possCite.querySelector('a').href;
-                        if (possCitelist.length>0) {
-                        for (n=0;n<possCitelist.length;n++) {
-                            if (possCitelist[n][0] != [possTitle]) { // not already in list
-                                possCitelist.push([possTitle,possLink,possCite]);
-                            }
-                        }
-                        }
-                        else {
-                            possCitelist.push([possTitle,possLink,possCite]);
-                        }
-                    }
-                }
+        }
+        else {
+            DOImatch = outPages[d].href.replace('%2F','/').match(doiRE); // get DOI from link URL
+            if (DOImatch) {
+                if ((doilist[0] && doilist.join().indexOf(DOImatch[0]==-1))
+                || doilist.length<1) {
+                    outPages[d].setAttribute("data-doi",DOImatch[0]);
+                    doilist.push([DOImatch[0],outPages[d].title.replace(/doi:\s?/gi,'').replace(doiRE,''),origin]);
                 }
             }
         }
     }
     
-    // maybe do a callback check for all DOIs to have been obtained
-    
-    JSONlist = [];
-    
-    GSqueries = [];
-    for (j=0;j<possCitelist.length;j++) {
-        n = possCitelist[j];
-        ttl = n[0];
-        lnk = n[1];
-        yr = n[2].innerText.match(/\([12]\d\d\d\)/)[0].substr(1,4);
-        query = 'https://www.googleapis.com/scribe/v1/research?query='+ttl+'&key=AIzaSyDqVYORLCUXxSv7zneerIgC2UYMnxvPeqQ&callback=gsq';
-        origin = n[2].querySelector('sub a[href]').href; // NB make sure just 1 <a> per <p> or will drop any after the first
-        GSqueries.push([query,ttl,lnk,yr,n,origin]);
-    }
-    
-    for (l=0;l<doilist.length;l++){
-        newBadge = document.createElement('div');
-        newBadge.setAttribute('data-badge-popover','right');
-        newBadge.setAttribute('data-badge-type','medium-donut');
-        newBadge.setAttribute('origin',doilist[l][2]);
-        newBadge.setAttribute('data-doi',doilist[l][0]);
-        newBadge.setAttribute('data-hide-no-mentions','true');
-        newBadge.className = "altmetric-embed";
-        document.getElementById('altmetBox').appendChild(newBadge);
-    }
-    
-    if (typeof gsqRun == 'undefined') {
-    for (a=0;a<GSqueries.length;a++) {
-        var scr = document.createElement('script');
-        scr.src = GSqueries[a][0];
-        scr.setAttribute('origin',GSqueries[a][5]);
-        document.querySelector('head').appendChild(scr);
+    for (opdoi=0; opdoi<doilist.length; opdoi++) {
+        if (doilist[opdoi][1] == ''
+            && !crossref_doi_citations.propertyIsEnumerable(doilist[opdoi][0])
+            // if the title is blank (i.e. link didn't have one) and haven't already gotten via CrossRef,
+        ) {
+            doiInfo(doilist[opdoi][0]); // retrieve DOI and format title, add to crossref_doi_citations object
         }
-        gsqRun = true;
     }
+    
+    // only write the badges to page (makeBadges) after retrieving titles from CrossRef where needed
+    
+    makeBadges();
     
     /*
     function foo(data)
