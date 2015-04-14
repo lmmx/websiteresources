@@ -643,8 +643,10 @@ function styleBadges() {
         hostdiv.appendChild(openarrow);
         hostdiv.appendChild(openbox);
     }
-} else if (document.querySelector('body[onscroll]')) {document.querySelector('body').removeAttribute('onscroll');}
-
+} else if (document.querySelector('body[onscroll]')) {
+    CRbadgeTitles();
+    document.querySelector('body').removeAttribute('onscroll');
+}
 }
 
 function spinBadge(badge) {
@@ -899,6 +901,15 @@ function captionHoverClassify() {
     }
 }
 
+function CRlinkTitles() {
+    post_links_to_retitle = document.querySelectorAll('div.post a[data-doi]:not([title])');
+    for (plft=0; plft<post_links_to_retitle.length; plft++) {
+        var link_target = post_links_to_retitle[plft];
+        var link_doi_target = link_target.getAttribute('data-doi');
+        link_target.setAttribute('title', crossref_doi_citations[link_doi_target]);
+    }
+}
+
 function CRbadgeTitles() {
     console.log("Adding badge titles...")
     badges_for_titles = document.querySelectorAll('div[data-doi][class="altmetric-embed"]:not([style])');
@@ -986,7 +997,7 @@ if (window.history && history.pushState) {
 	      
 	      if (crossref_retrieval_progress == crossref_retrieval_goal) {
 	          // edit titles
-	          CRbadgeTitles();
+	          CRlinkTitles(); // can't edit badge titles here from JS race condition
 	      }
 	      
 	    });
