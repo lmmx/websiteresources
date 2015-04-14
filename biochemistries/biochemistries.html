@@ -1015,6 +1015,7 @@ if (window.history && history.pushState) {
     outPages = document.querySelectorAll("div#page.permalinkpage div.post a:not([href*='biochemistri.es']):not(.dsq-brlink):not(.permalink)");
     if (outPages.length>0 && !document.querySelector('div.altmetric-embed')) {
     doilist = [];
+    doiwatch = [];
     crossref_doi_citations = {};
     crossref_retrieval_goal = 0;
     crossref_retrieval_progress = 0; // see when ready to apply titles to badges
@@ -1026,9 +1027,10 @@ if (window.history && history.pushState) {
         if (outPages[d].title.indexOf("doi:")!=-1) {
             DOImatch = outPages[d].title.match(doiRE); // get DOI from link title
             if (DOImatch) {
-                if ((doilist[0] && doilist.join().indexOf(DOImatch[0])==-1)
+                if ((doilist[0] && doiwatch.indexOf(DOImatch[0])==-1)
                 || doilist.length<1) {
                     outPages[d].setAttribute("data-doi",DOImatch[0]);
+                    doiwatch.push(DOImatch[0]);
                     doilist.push([DOImatch[0],outPages[d].title.replace(/doi:\s?/gi,'').replace(doiRE,''),origin]);
                 }
             }
@@ -1036,9 +1038,10 @@ if (window.history && history.pushState) {
         else {
             DOImatch = outPages[d].href.replace('%2F','/').match(doiRE); // get DOI from link URL
             if (DOImatch) {
-                if ((doilist[0] && doilist.join().indexOf(DOImatch[0]==-1))
+                if ((doilist[0] && doiwatch.indexOf(DOImatch[0])==-1)
                 || doilist.length<1) {
                     outPages[d].setAttribute("data-doi",DOImatch[0]);
+                    doiwatch.push(DOImatch[0]);
                     doilist.push([DOImatch[0],outPages[d].title.replace(/doi:\s?/gi,'').replace(doiRE,''),origin]);
                 }
             }
