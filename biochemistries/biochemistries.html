@@ -648,7 +648,6 @@ function styleBadges() {
         badges_done = true;
         CRbadgeTitles();
     } else {
-        CRbadgeTitles(); // Race conditions all the way...
         document.querySelector('body').removeAttribute('onscroll');
     }
 }
