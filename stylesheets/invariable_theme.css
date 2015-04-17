@@ -467,13 +467,25 @@ div.source ol p sub{margin-top:-15px}
 blockquote{overflow:hidden;}
 ol#permalinkpagination + div.post{width:915px;}
 ol#permalinkpagination ~ * {padding-left: 3%;}
-ul.justtags
-{
--moz-columns:250px 3; /* Firefox */
--webkit-columns:250px 3; /* Safari and Chrome */
-padding-left:0px;
-min-width: 300px;
+ul#justtags {
+    -moz-columns:250px 3; /* Firefox */
+    -webkit-columns:250px 3; /* Safari and Chrome */
+    padding-left:0px;
+    min-width: 300px;
 }
+div#recent-post-box {
+    font-size: 18px;
+    display: block;
+    font-family: monospace;
+    margin: 2em;
+}
+ul#recent-post-list {
+    -moz-columns:250px 2; /* Firefox */
+    -webkit-columns:250px 2; /* Safari and Chrome */
+    padding-left:0px;
+    min-width: 500px;
+}
+
 li small{font-size:13px;line-height:1.3;padding-top:0px}
 
 /*blockquote{border-left-style:solid;border-left-width:1px;margin:0.9em 0;padding-left:0.9em; }*/
@@ -573,7 +585,7 @@ a:hover img.menu_c, a:focus img.menu_c {
     transform: scale(6.5);
 }
 
-ul.justtags {
+ul#justtags {
     font-weight:bold;
 }
 
