@@ -459,8 +459,9 @@ if (document.URL.indexOf('/post/') > -1) {
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 <script id="recent-post-lister">
+function recentPostMaker() {
     var remodelling = document.querySelector('#recent-post-pre');
-    var post_number = 5;
+    var post_number = 9;
 //    recent_post_list = [];
     if (remodelling !== null) {
         sortPosts();
@@ -478,9 +479,13 @@ if (document.URL.indexOf('/post/') > -1) {
             remodel_list.appendChild(recent_post_listing);
         }
         remodelling.setAttribute('id','recent-post-box');
+        var morepostheader = document.createElement('h3');
+        morepostheader.innerHTML = 'Recent posts on the blog:';
+        remodelling.appendChild(morepostheader);
         remodelling.appendChild(remodel_list);
         smoothPages(); // set ajaxLoad click handler on internal links
     }
+}
 </script>
 <script>
 function resetMarkers() {
@@ -1143,6 +1148,7 @@ if (window.history && history.pushState) {
     bqCites();
     captionHoverClassify();
     sneakyRename();
+    recentPostMaker();
     // p blocks containing captioned images now have class
     // "caption" so CSS3 element:hover + adjacent selector
     // can be used to expand the caption box
