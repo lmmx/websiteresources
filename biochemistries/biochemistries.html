@@ -443,7 +443,7 @@ a {
 <div class="fb-share-button" data-href="{Permalink}" data-layout="button" onmouseover="pan=this.parentNode.querySelector('#sharePanel');if(pan.classList.contains('fadeintwo')){pan.classList.add('fbshow');pan.classList.remove('fadeintwo')};"></div>
 {block:IndexPage}{block:NoteCount}<a href="{Permalink}#notes" class="notecount" title="{lang:Notes}"><span>{NoteCount}</span></a> {/block:NoteCount}{/block:IndexPage}{block:HasTags}<ul class="tags"><script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
 <div id="altmetBox">
-</div><ul class="justtags">{block:Tags}<li><a href="{TagURL}" class="tag"><span>{Tag}</span></a></li>{/block:Tags}</ul>{block:IfDisqusShortname}
+</div><ul id="justtags">{block:Tags}<li><a href="{TagURL}" class="tag"><span>{Tag}</span></a></li>{/block:Tags}</ul>{block:IfDisqusShortname}
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -459,12 +459,13 @@ if (document.URL.indexOf('/post/') > -1) {
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 <script id="recent-post-lister">
-/*
     var remodelling = document.querySelector('#recent-post-pre');
     var post_number = 5;
 //    recent_post_list = [];
     if (remodelling !== null) {
         sortPosts();
+        var remodel_list = document.createElement('ul');
+        remodel_list.setAttribute('id','recent-post-list')
         var recent_ids = id_list.slice(Math.max(id_list.length - post_number, 1));
         for (i=0;i<post_number;i++) {
             var shortname = listingobj[recent_ids[i]];
@@ -474,12 +475,12 @@ if (document.URL.indexOf('/post/') > -1) {
             recent_post_link.setAttribute('href','http://biochemistri.es/'+shortname);
             var recent_post_listing = document.createElement('li');
             recent_post_listing.appendChild(recent_post_link);
-            remodelling.appendChild(recent_post_listing);
+            remodel_list.appendChild(recent_post_listing);
         }
-        remodelling.setAttribute('id','recent-post-list');
+        remodelling.setAttribute('id','recent-post-box');
+        remodelling.appendChild(remodel_list);
         smoothPages(); // set ajaxLoad click handler on internal links
     }
-*/
 </script>
 <script>
 function resetMarkers() {
