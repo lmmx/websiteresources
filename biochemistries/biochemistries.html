@@ -132,7 +132,6 @@ function sortPosts() {
 	}
 	for (i=0;i<id_list.length;i++) {
     console.log(id_list[i], listingobj[id_list[i]].replace(/\-/g," "))
-    // could make a "recent posts" box
   }
 }
 </script>
@@ -468,7 +467,7 @@ function recentPostMaker() {
         var remodel_list = document.createElement('ul');
         remodel_list.setAttribute('id','recent-post-list')
         var recent_ids = id_list.slice(Math.max(id_list.length - post_number, 1));
-        for (i=0;i<post_number;i++) {
+        for (i=post_number-1;i>=0;i--) {
             var shortname = listingobj[recent_ids[i]];
 //            recent_post_list.push(shortname); // may be useful
             var recent_post_link = document.createElement('a');
