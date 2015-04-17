@@ -514,14 +514,23 @@ function ajaxLoad(internal) {
     resetMarkers();
     
     var xmlhttp;
-    window.XMLHttpRequest ? xmlhttp=new XMLHttpRequest() : xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    //window.XMLHttpRequest ? xmlhttp=new XMLHttpRequest() : xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    if (window.XMLHttpRequest && ! (window.ActiveXObject || "ActiveXObject" in window)) {
+    	xmlhttp = new XMLHttpRequest();
+    } else {
+    	// IE can't handle page writing, who knows why
+    	console.log("Backing out");
+    	window.location.href = internal;
+    	console.log("Backed out, returning");
+    	return;
+    }
     
     xmlhttp.onreadystatechange=function()
     {
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
     document.open();
-    document.write(xmlhttp.responseText);
+    document.write(xmlhttp.responseText); // IE throws a permission denied error here eugh
     document.close();
     
     window.history.pushState(xmlhttp.responseText,document.pageTitle,xmlhttp.called_url);
@@ -694,6 +703,7 @@ function styleBadges() {
 } else if (document.querySelector('body[onscroll]')) {
     if (typeof badges_done == 'undefined') {
         badges_done = true;
+        sneakyRename();
         CRbadgeTitles();
     } else {
         document.querySelector('body').removeAttribute('onscroll');
