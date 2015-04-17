@@ -470,6 +470,8 @@ ol#permalinkpagination ~ * {padding-left: 3%;}
 ul#justtags {
     -moz-columns:250px 3; /* Firefox */
     -webkit-columns:250px 3; /* Safari and Chrome */
+    column-count: 3; /* New IE */
+    column-width: 250px; /* New IE */
     padding-left:0px;
     min-width: 300px;
 }
@@ -485,6 +487,8 @@ ul#recent-post-list {
     font-variant: small-caps;
     -moz-columns:300px 3; /* Firefox */
     -webkit-columns:300px 3; /* Safari and Chrome */
+    column-count: 3; /* New IE */
+    column-width: 300px; /* New IE */
     padding-left:0px;
     min-width: 500px;
     margin: 1em 0;
