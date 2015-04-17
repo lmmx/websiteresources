@@ -473,6 +473,7 @@ ul#justtags {
     padding-left:0px;
     min-width: 300px;
 }
+div#recent-post-pre {display:none;} /* secret fallback */
 div#recent-post-box {
     font-size: 18px;
     display: block;
