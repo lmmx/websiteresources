@@ -478,19 +478,19 @@ div#recent-post-box {
     display: block;
     font-family: monospace;
     margin-bottom: 4em;
-    max-width: 1200px;
+    max-width: 1000px;
 }
 ul#recent-post-list {
     font-variant: small-caps;
-    -moz-columns:350px 3; /* Firefox */
-    -webkit-columns:350px 3; /* Safari and Chrome */
+    -moz-columns:300px 3; /* Firefox */
+    -webkit-columns:300px 3; /* Safari and Chrome */
     padding-left:0px;
     min-width: 500px;
-    margin: 1em;
+    margin: 1em 0;
 }
 ul#recent-post-list li {
     list-style: none;
-    padding: 10px 10px 10px 40px;
+    padding: 10px 5px 10px 35px;
     background-position: -4px center;
     -webkit-transition: all 150ms ease-in-out; /* property duration timing-function delay */
     -moz-transition: all 150ms ease-in-out;
@@ -902,7 +902,7 @@ opacity: 0.8;
 margin-left: -18px;
 margin-top: -12px;
 }
-#header a#top{display:block;height:4.2em;left:0;position:absolute;top:0;width:3.7em;z-index:1001;outline:none;}#header 
+#header a#top{display:block;height:4.2em;left:0;position:absolute;top:0;width:11.5em;z-index:1001;outline:none;}#header 
 h1,#header 
 h2{font-size:1em;font-weight:normal;margin:0;}
 
