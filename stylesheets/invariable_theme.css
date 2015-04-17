@@ -490,13 +490,22 @@ ul#recent-post-list {
 }
 ul#recent-post-list li {
     list-style: none;
-    padding: 10px;
+    padding: 10px 10px 10px 40px;
+    background-position: -4px center;
+    -webkit-transition: all 150ms ease-in-out; /* property duration timing-function delay */
+    -moz-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
 }
 
 ul#recent-post-list li:hover {
     background-image: url('http://static.tumblr.com/ktpagkh/zZgnmyett/stanford_bun25.png');
     background-repeat: no-repeat;
     background-position: 0px center;
+}
+
+ul#recent-post-list li a:hover {
+    text-decoration: none;
 }
 
 li small{font-size:13px;line-height:1.3;padding-top:0px}
