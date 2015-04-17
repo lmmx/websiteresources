@@ -458,6 +458,29 @@ if (document.URL.indexOf('/post/') > -1) {
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script id="recent-post-lister">
+/*
+    var remodelling = document.querySelector('#recent-post-pre');
+    var post_number = 5;
+//    recent_post_list = [];
+    if (remodelling !== null) {
+        sortPosts();
+        var recent_ids = id_list.slice(Math.max(id_list.length - post_number, 1));
+        for (i=0;i<post_number;i++) {
+            var shortname = listingobj[recent_ids[i]];
+//            recent_post_list.push(shortname); // may be useful
+            var recent_post_link = document.createElement('a');
+            recent_post_link.innerHTML = shortname.replace(/-/g,' ');
+            recent_post_link.setAttribute('href','http://biochemistri.es/'+shortname);
+            var recent_post_listing = document.createElement('li');
+            recent_post_listing.appendChild(recent_post_link);
+            remodelling.appendChild(recent_post_listing);
+        }
+        remodelling.setAttribute('id','recent-post-list');
+        smoothPages(); // set ajaxLoad click handler on internal links
+    }
+*/
+</script>
 <script>
 function resetMarkers() {
     pdfSVG = undefined; // add more here if needed
@@ -1135,7 +1158,9 @@ if (window.history && history.pushState) {
     function noteReset() {
         document.querySelector('div#notes').removeAttribute('style');
     }
-</script><div id="notes" onmouseover="noteHeight();" onmouseout="noteReset();">{PostNotes}</div>{/block:PostNotes}{/block:Posts}{block:IndexPage}{block:IfInfiniteScrolling}</div>{/block:IfInfiniteScrolling}{/block:IndexPage}</div>
+</script>
+<div id="recent-post-pre"></div>
+<div id="notes" onmouseover="noteHeight();" onmouseout="noteReset();">{PostNotes}</div>{/block:PostNotes}{/block:Posts}{block:IndexPage}{block:IfInfiniteScrolling}</div>{/block:IfInfiniteScrolling}{/block:IndexPage}</div>
 
 <div id="footer"> {block:IfAnyLastWords}<div id="anylastwords">{text:Any last words}</div>{/block:IfAnyLastWords}{block:Pagination}<div id="pagination">
 <p>{lang:Page CurrentPage of TotalPages}</p><ul class="pagenumbering">{block:PreviousPage}<li class="previouspage" align="center"><a href="{PreviousPage}"><span>{lang:Previous}</span></a></li>{/block:PreviousPage}{block:JumpPagination length="7"}{block:CurrentPage}<li><span class="currentpage">{PageNumber}</span></li>{/block:CurrentPage}{block:JumpPage}<li><a href="{URL}">{PageNumber}</a></li>{/block:JumpPage}{/block:JumpPagination}{block:NextPage}<li class="nextpage"><a href="{NextPage}"><span>{lang:Next}</span></a></li>{/block:NextPage}</ul></div>{/block:Pagination}</center><ul class="menu_b"><hf class="menu_b">
