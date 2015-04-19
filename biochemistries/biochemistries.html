@@ -1036,7 +1036,7 @@ if (window.history && history.pushState) {
 	      crossref_retrieval_progress++;
 	      if (doiXHR.readyState==4 && doiXHR.status==200){
 	        var doi_resp = JSON.parse(doiXHR.responseText)[0];
-	        var authors = doi_resp.fullCitation.replace(/, \d{4}, .*$/, '')
+	        var authors = doi_resp.fullCitation.replace(/, \d\d\d\d, .*$/, '')
 	          .split(',');
 	        var auths = authors.length;
 	        if (auths == 1) {
