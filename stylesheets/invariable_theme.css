@@ -117,8 +117,9 @@ pre.fig-cap.main-fig.inline-cap {
     #page #content {
         width: inherit !important;
     }
-    ol#permalinkpagination + div.post{width:915px !important;}
+    #page.permalinkpage div.post{width:915px !important;}
     #content #notes{width:915px;}
+    #page.permalinkpage div.row {width:915px;}
 }
 
 @media only screen and (min-width: 840px) and (max-width: 875px) {
@@ -144,6 +145,7 @@ pre.fig-cap.main-fig.inline-cap {
         margin: 0;
     }
     #page.permalinkpage .post{width:915px !important;}
+    #page.permalinkpage div.row {width:915px;}
 }
 
 @media only screen and (min-width: 840px) and (max-width: 1175px) {
@@ -166,6 +168,7 @@ pre.fig-cap.main-fig.inline-cap {
         margin: 0;
     }
     #page.permalinkpage .post{width:915px !important;}
+    #page.permalinkpage div.row {width:915px;}
 }
 
 @media only screen and (min-width: 1500px) {
@@ -948,10 +951,6 @@ div.row {
     float:left;
     width:500px;
     padding-bottom: 15px;
-}
-
-body.permalinkpage div.row {
-    width:915px;
 }
 
 
