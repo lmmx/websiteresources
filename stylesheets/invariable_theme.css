@@ -113,6 +113,15 @@ pre.fig-cap.main-fig.inline-cap {
     margin-right: auto;
 }
 
+@media only screen and (max-width: 500px) {
+	#page #content {width: 100% !important;}
+	#page .post{width:95% !important;} /* Slightly bad design with overflow padding cut off  */
+	#content #notes{width: 100% !important;}
+	#page div.row {width:100% !important;}
+	iframe {width: inherit !important;}
+	#page {overflow-x: hidden;}
+}
+
 @media only screen and (min-width: 1175px) {
     #page #content {
         width: inherit !important;
