@@ -113,7 +113,7 @@ pre.fig-cap.main-fig.inline-cap {
     margin-right: auto;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 580px) {
 	#page #content {width: 100% !important;}
 	#page .post{width:95% !important;} /* Slightly bad design with overflow padding cut off  */
 	#content #notes{width: 100% !important;}
