@@ -111,7 +111,7 @@ else {
 </style></noscript>
 <script type="text/javascript">
 function sneakyLinkFix(current_pagename) {
-    var navlinks = document.querySelectorAll('.navlink:not(.shortened)');
+    var navlinks = document.querySelectorAll('.navlink:not(.shortened):not(.fb)');
     for (nl=0; nl<navlinks.length;nl++) {
         var navlinkmatch = navlinks[nl].href.match(/http:.+\/(\d\d*)/);
         var navlinkmatch_post_id = navlinkmatch[1];
