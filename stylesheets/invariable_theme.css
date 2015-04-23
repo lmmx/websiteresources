@@ -364,6 +364,11 @@ blockquote pre {
     background: rgba(113, 147, 255, 0.15);
 }
 
+div#page.post117194407291 blockquote {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
 a, div.info a:hover {text-decoration:none}
 blockquote p {
     -webkit-margin-before:0px;-webkit-margin-after:0px;
