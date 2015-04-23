@@ -365,8 +365,8 @@ blockquote pre {
 }
 
 #page.indexpage div.post.post117207693546 blockquote, div#page.post117207693546 blockquote {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
 }
 
 a, div.info a:hover {text-decoration:none}
