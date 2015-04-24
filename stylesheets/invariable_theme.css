@@ -1627,6 +1627,18 @@ li.tumblelog_bonersnstuff {
 
 .nofl { clear: both; }
 
+div.post-update {
+    border-radius: 0 60px;
+    margin: 20px;
+    border-color: #006880;
+    border-style: double;
+    border-width: 21px;
+}
+
+div.post-update > * {
+    margin: 27px;
+}
+
 #header #search{display:none;}#header #search form input[type="text"]{-webkit-appearance:none;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;border-style:solid;border-width:1px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;margin:0.9em 0;padding:0.9em;width:100%;}#header #search form input[type="submit"]{display:none;}#header ul#enabled li,#content ol#permalinkpagination li{display:inline;list-style-type:none;padding-right:1.8em;}#header ul#enabled{clear:both;margin:0;padding:0.9em 0 0 0;}
 /* #content */
 #content {
