@@ -17,7 +17,7 @@ pre.big-pre {
 }
 
 pre.fig-cap {
-    background: -webkit-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%)
+    background: -webkit-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
     background: -moz-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
     background: -ms-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
     background: -o-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
@@ -442,7 +442,7 @@ div ol{font-style:normal;font-weight:normal;line-height:1;padding-top:0px;overfl
     -moz-margin-start:0px;-moz-margin-end:0px;
     margin-start:0px;margin-end:0px;
     -o-margin-start:0px;-o-margin-end:0px;
-    background: -webkit-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%)
+    background: -webkit-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
     background: -moz-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
     background: -ms-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
     background: -o-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
@@ -871,7 +871,7 @@ blockquote{font-size:120%; display: block;padding-top:0px;padding-bottom:0px;
     margin-start:0px;margin-end:0px;
     -o-margin-start:0px;-o-margin-end:0px;}
 blockquote,#openbox{
-    background: -webkit-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%)
+    background: -webkit-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
     background: -moz-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
     background: -ms-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
     background: -o-linear-gradient(left, #E0FFE8 12%, #FAFFFB 100%);
