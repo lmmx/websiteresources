@@ -934,7 +934,7 @@ span.num{font-size:75%;vertical-align:2ex;} /* #header */ #header,#footer{paddin
     
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
-    border-radius:50px;
+    border-radius:0;
     }
 
 #header a#home:hover img{
