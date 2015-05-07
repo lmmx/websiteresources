@@ -1106,7 +1106,7 @@ if (window.history && history.pushState) {
 	    doiXHR.send();
 	}
         
-    outPages = document.querySelectorAll("div#page.permalinkpage div.post a:not([href*='biochemistri.es']):not(.dsq-brlink):not(.permalink)");
+    outPages = document.querySelectorAll("div#page div.post a:not([href*='biochemistri.es']):not(.dsq-brlink):not(.permalink)");
     if (outPages.length>0 && !document.querySelector('div.altmetric-embed')) {
     doilist = [];
     doiwatch = [];
