@@ -81,12 +81,6 @@ p.captioned:hover + pre.collapsible .collapsing-section, pre.collapsible:hover .
     transition: max-height 3000ms ease 1000ms;
 }
 
-#page.permalinkpage pre.glossary, #page.permalinkpage pre.fig-cap {
-    margin-left: 936px;
-    width: 217px;
-    position: absolute;
-}
-
 #page.permalinkpage pre.fig-cap {
     margin-top: 45px;
 }
@@ -110,6 +104,12 @@ pre.fig-cap.main-fig.inline-cap {
     width: 500px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#page.permalinkpage pre.glossary, #page.permalinkpage pre.fig-cap {
+    margin-left: 0;
+    width: 217px;
+    position: relative;
 }
 
 @media only screen and (max-width: 580px) {
@@ -142,6 +142,11 @@ pre.fig-cap.main-fig.inline-cap {
         margin-left: 5% !important;
         margin-right: 5% !important;
     }
+    
+    #page.permalinkpage pre.glossary, #page.permalinkpage pre.fig-cap {
+        margin-left: 512px;
+        position: absolute;
+    }
 }
 
 @media only screen and (min-width: 965px) and (max-width: 1140px) {
@@ -172,11 +177,19 @@ pre.fig-cap.main-fig.inline-cap {
     ol#permalinkpagination ~ *, #page.indexpage #content {
         padding-left: 3%;
     }
+    
     #page.permalinkpage #content {
         margin: 0;
     }
     #page.permalinkpage .post{width:915px !important;}
     #page.permalinkpage div.row {width:915px;}
+}
+
+@media only screen and (min-width: 1260px) {
+    #page.permalinkpage pre.glossary, #page.permalinkpage pre.fig-cap {
+        margin-left: 936px;
+        position: absolute;
+    }
 }
 
 @media only screen and (min-width: 1500px) {
