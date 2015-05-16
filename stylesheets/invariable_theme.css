@@ -314,6 +314,11 @@ div.post p img, div.post p a img, div.post p iframe, blockquote img, blockquote 
     margin-top:5px;
     }
     
+div.post blockquote p img, div.post blockquote p a img {
+    margin-right: -16px;
+    padding-left: 10px;
+}
+    
 .pic-vid-float {
     float: left;
     width: 200px;
