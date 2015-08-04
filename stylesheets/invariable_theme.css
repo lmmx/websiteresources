@@ -7,6 +7,10 @@
     tab-size: 4;
 }
 
+.gist-data, .gist-data * {
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+}
+
 .indexpage div.gist-data > div.file-data {
     max-height: 450px;
 }
