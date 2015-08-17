@@ -41,11 +41,12 @@ The 2014 scifi thriller continued by drawing attention to the&nbsp;&ldquo;pull&r
 
 ## The fate of _LibGen_
 
-The biggest flaw in this recent research into LibGen is one it couldn&rsquo;t really foresee, but that I&rsquo;ve already mentioned above. This article was accepted late last year, and published in March, yet by the end of June the site had been [taken down amidst mounting legal pressure](https://torrentfreak.com/libgen-goes-down-as-legal-pressure-mounts-150622/). _TorrentFreak_&nbsp;reported:
+The biggest flaw in this hopeful analysis of _LibGen_ is one it couldn&rsquo;t really foresee, but that I&rsquo;ve already mentioned above. This article was accepted late last year, and published in March. Yet, by the end of June, the site had been [taken down amidst mounting legal pressure](https://torrentfreak.com/libgen-goes-down-as-legal-pressure-mounts-150622/). _TorrentFreak_&nbsp;reported:
 
-Libgen, the largest online repository of free books and academic articles, has pretty much vanished from the Internet. Earlier this month the site's operators were sued by academic publishing company Elsevier, who asked a New York federal court for a preliminary injunction hoping to keep the site down for good.
+> <sub>Libgen, the largest online repository of free books and academic articles, has pretty much vanished from the Internet. Earlier this month the site's operators were sued by academic publishing company Elsevier, who asked a New York federal court for a preliminary injunction hoping to keep the site down for good.</sub>
 
-It&rsquo;s not hard to see why Elsevier was the one to take action when you look at the distribution of publishers whose journals were available in LibGen.
+> <sub>It&rsquo;s not hard to see why Elsevier was the one to take action when you look at the distribution of publishers whose journals were available in LibGen.</sub>
+
 ![](https://raw.githubusercontent.com/lmmx/shots/master/2015/Aug/Cabanac_2015_LibGen-content-sources.png)
 
 At the time of writing the main site remains offline, but like The Pirate Bay, takedowns just lead to more mirrors of the site (_as in the main picture, up top_).
