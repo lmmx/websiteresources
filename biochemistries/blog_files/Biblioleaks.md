@@ -56,7 +56,7 @@ A few threads circulated ahead of this takedown, [wondering whether Tor](https:/
 A burgenoning wave of peer-to-peer technologies looks about to surface, one of the protocols of which has a nicely self-explanatory name,&nbsp;&ldquo;[WebTorrent](https://webtorrent.io/)&rdquo; from Stanford alumnus [feross](http://tmblr.co/mozqjhuSr2Y6dsETQTymNqQ)&nbsp;(WebTorrent = [BitTorrent](https://en.wikipedia.org/wiki/BitTorrent) over [WebRTC](https://en.wikipedia.org/wiki/WebRTC)).
 
 At the moment the &lsquo;[hashes](https://en.wikipedia.org/wiki/Cryptographic_hash_function)&rsquo; it uses (short pieces of text encoding a unique&nbsp;&lsquo;key&rsquo; for file sharing through the web app) aren&rsquo;t cross-compatible with the sorts of torrents that fuel the free trade in illicit music and film (and journal articles), but rather are generated in a web browser, and retrieved the same way on the other end (by my understanding there&rsquo;s [a hybrid](https://github.com/feross/webtorrent-hybrid) which would allow this).
-![](https://raw.githubusercontent.com/lmmx/shots/master/2015/Aug/FilePizza.png)
+[![](https://raw.githubusercontent.com/lmmx/shots/master/2015/Aug/FilePizza.png)](http://file.pizza/)
 
 Brilliantly dorky proof-of-concept experiments like [file.pizza](http://file.pizza/) (served fresh from UC Berkeley) let you play around with 'decentralised&rsquo; file hosting in this nascent form, but it seems easy to envision these as the building blocks to some sort of crafty research-sharing network if the right minds get to work on the problem.
 
@@ -74,3 +74,9 @@ This paper on LibGen ends with that classic line: _more research is needed._
 &#9729; Dunn, Coiera, &amp; Mandl (2014) [Is biblioleaks inevitable?](http://dx.doi.org/10.2196/jmir.3331)&nbsp;_Journal of Medical Internet Research_, **16**(4)
 
 &#9729; Guillaume Cabanac (2015) [Bibliogifts in LibGen? A study of a text&#8208;sharing platform driven by biblioleaks and crowdsourcing](http://dx.doi.org/10.1002/asi.23445). _Journal of the Association for Information Science and Technology_&nbsp;[[pdf]](http://www.irit.fr/publis/SIG/2015_JASIST_C.pdf)
+
+**Watch:** A talk given only last week, citing Cabanac&rsquo;s work, given by Storm Harding at [_Chaos Communication Camp 2015_](https://events.ccc.de/camp/2015/wiki/Main_Page):
+
+&#9762; [_Jumping the Paywall: How to freely share research without being arrested_](https://media.ccc.de/browse/conferences/camp2015/camp2015-6766-jumping_the_paywall.html)
+
+<sub>Harding provides a radical, civil disobedience-oriented approach to open access &mdash; in fact he declares the term itself a 'propertarian doublespeak', writing it off along with the notion of respect of copyright itself (foreseeable for a community that saw the birth of [kopimi](http://knowyourmeme.com/memes/subcultures/kopimism)). CCCamp is frequented by the security/hacker community and what they call "associated life-forms", convening for conversations with a technical, social, and political bent.</sub>
