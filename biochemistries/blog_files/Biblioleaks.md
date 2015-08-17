@@ -66,7 +66,7 @@ In terms of accessibility and professional respectability it&rsquo;s hugely more
 (As a recent graduate having lost access to the library resources and waiting for return emails from JSTOR reps about access to a book PDF through the alumni scheme I&rsquo;m feeling this)
 ![](https://raw.githubusercontent.com/lmmx/shots/master/2015/Aug/Cabanac_2015_Sci-Hub.png)
 
-(Dis?)Honourable closing mention here to &lsquo;**Sci-Hub**&rsquo;, a service which is somehow logged into various institutional networks, allowing users to download PDFs from outside (and even jump onto another proxy server if the one in use doesn&rsquo;t have access to a requested item). Each article retrieved this way is then deposited into LibGen (unlike #icanhazPDF, which generally runs via old-fashioned email meaning no residual benefit to the community afterwards).
+(Dis?)Honourable closing mention here to [&lsquo;**Sci-Hub**&rsquo;](https://torrentfreak.com/sci-hub-tears-down-academias-illegal-copyright-paywalls-150627/), a service which is somehow logged into various institutional networks, allowing users to download PDFs from outside (and even jump onto another proxy server if the one in use doesn&rsquo;t have access to a requested item). Each article retrieved this way is then deposited into LibGen (unlike #icanhazPDF, which generally runs via old-fashioned email meaning no residual benefit to the community afterwards).
 
 This paper on LibGen ends with that classic line: _more research is needed._
 
