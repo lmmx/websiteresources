@@ -8,7 +8,7 @@ The interview follows [a publication](http://onlinelibrary.wiley.com/doi/10.1002
 
 ![](https://raw.githubusercontent.com/lmmx/shots/master/2015/Aug/Cabanac_2015_LibGen-growth-curves.png)
 
-Notably, the growth of the scientific articles within LibGen (designated _scimag_) have clearly grown stepwise, through a series of discrete acquisitions, indicating &lsquo;Biblioleaks&rsquo; as predicted by [Dunn _et al._](http://dx.doi.org/10.2196/jmir.3331)&nbsp;in 2014 is well underway.
+Notably, the growth of the scientific articles within _LibGen_ (designated _scimag_) have clearly grown stepwise, through a series of discrete acquisitions, indicating &lsquo;Biblioleaks&rsquo; as predicted by [Dunn _et al._](http://dx.doi.org/10.2196/jmir.3331)&nbsp;in 2014 is well underway.
 
 ## _71% of the collection was&nbsp;collected at a rate of 100,000+ papers a day_
 
@@ -24,7 +24,7 @@ This future is but a rogue agent away - except for the all-important section I&r
 
 A [recent blog post](https://awayofhappening.wordpress.com/2015/07/17/the-library-genesis-project-the-easiest-way-to-find-full-text-articles-online-illegally/) by [Ryan Regier](https://twitter.com/ryregier)&nbsp;compares this to a simply more efficient version of the traditional copy request. _ResearchGate_&nbsp;has buttons to do so via author email, but [anecdotes](http://poynder.blogspot.ca/2015/06/hefce-elsevier-copy-request-button-and.html#more)&nbsp;about&nbsp;&lsquo;university lawyers&rsquo; suggest hesitance, and uncertainty about the exact legal status of this under academic &lsquo;fair use&rsquo;.
 
-Ryan [highlights](https://awayofhappening.wordpress.com/2015/07/17/the-library-genesis-project-the-easiest-way-to-find-full-text-articles-online-illegally/) an exchange on the LibGen forum between a Lebanese university and those responsible for the service, which gives an idea of their motivations.
+Ryan [highlights](https://awayofhappening.wordpress.com/2015/07/17/the-library-genesis-project-the-easiest-way-to-find-full-text-articles-online-illegally/) an exchange on the _LibGen_ forum between a Lebanese university and those responsible for the service, which gives an idea of their motivations.
 
 <img src="https://raw.githubusercontent.com/lmmx/shots/master/2015/Aug/USJ_LibGen_request.png" class="center-nofloat" />
 <img src="https://raw.githubusercontent.com/lmmx/shots/master/2015/Aug/USJ_LibGen_response.png" class="center-nofloat" />
@@ -39,9 +39,9 @@ The 2014 scifi thriller continued by drawing attention to the&nbsp;&ldquo;pull&r
 
 > <sub>Overall, the capacity to better link and synthesize research could also lead to improvements in automated literature discovery, expanding opportunities for new forms of research. With passive roles in the Biblioleaks scenario, the interests of authors of peer-reviewed research would be served, with no directly associated risks.</sub>
 
-## LibGen down
+## The fate of _LibGen_
 
-The biggest flaw in this recent research into LibGen is one it couldn&rsquo;t really foresee, but that I mentioned above. This article was accepted late last year, and published in March, yet by the end of June the site had been [taken down amidst mounting legal pressure](https://torrentfreak.com/libgen-goes-down-as-legal-pressure-mounts-150622/). _TorrentFreak_&nbsp;reported:
+The biggest flaw in this recent research into LibGen is one it couldn&rsquo;t really foresee, but that I&rsquo;ve already mentioned above. This article was accepted late last year, and published in March, yet by the end of June the site had been [taken down amidst mounting legal pressure](https://torrentfreak.com/libgen-goes-down-as-legal-pressure-mounts-150622/). _TorrentFreak_&nbsp;reported:
 
 Libgen, the largest online repository of free books and academic articles, has pretty much vanished from the Internet. Earlier this month the site's operators were sued by academic publishing company Elsevier, who asked a New York federal court for a preliminary injunction hoping to keep the site down for good.
 
@@ -63,10 +63,10 @@ FilePizza is a &ldquo;simple&rdquo; example of how to build on top of these tech
 
 In terms of accessibility and professional respectability it&rsquo;s hugely more appropriate of a solution than stashing papers on the dark-web. Likewise, where #icanhazPDF and similar&nbsp;&ldquo;bibliogift&rdquo; schemes are doomed to be niche activities, or rare and kind of awkward requests, a decentralised scheme could be simple and so enabling as to make its use unavoidable in a community facing paywalls at every turn.
 
-(As a recent graduate having lost access to the library resources and waiting for return emails from JSTOR reps about access to a book PDF through the alumni scheme I&rsquo;m feeling this)
+_(As a recent graduate, having lost access to the library resources, and waiting for days on return emails from a JSTOR rep about faulty access to material through the alumni scheme, I&rsquo;m feeling this frustration more than usual.)_
 ![](https://raw.githubusercontent.com/lmmx/shots/master/2015/Aug/Cabanac_2015_Sci-Hub.png)
 
-(Dis?)Honourable closing mention here to [&lsquo;**Sci-Hub**&rsquo;](https://torrentfreak.com/sci-hub-tears-down-academias-illegal-copyright-paywalls-150627/), a service which is somehow logged into various institutional networks, allowing users to download PDFs from outside (and even jump onto another proxy server if the one in use doesn&rsquo;t have access to a requested item). Each article retrieved this way is then deposited into LibGen (unlike #icanhazPDF, which generally runs via old-fashioned email meaning no residual benefit to the community afterwards).
+(Dis?)honourable closing mention here to [&lsquo;**Sci-Hub**&rsquo;](https://torrentfreak.com/sci-hub-tears-down-academias-illegal-copyright-paywalls-150627/), a service which provides proxy access directly into institutional computer networks, allowing users to download PDFs from outside (and even jump onto another proxy server if the one in use doesn&rsquo;t have access to a requested item). Each article retrieved this way is then deposited into _LibGen_ (unlike #icanhazPDF, which generally runs via old-fashioned email meaning no residual benefit to the community afterwards).
 
 This paper on LibGen ends with that classic line: _more research is needed._
 
