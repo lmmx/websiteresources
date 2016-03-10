@@ -15,6 +15,24 @@
     max-height: 450px;
 }
 
+.tmblr-iframe--controls-phone-container {
+    padding-top: 0 !important;
+}
+
+iframe.tmblr-iframe.tmblr-iframe--mobile-logged-in-controls.iframe-controls--phone-mobile {
+    position: absolute;
+    left: initial !important;
+    margin-right: -121px !important;
+    right: -4px !important;
+    width: 231px !important;
+    background-clip: padding-box !important;
+    border-radius: 300px 0 0 300px !important;
+    padding-right: 0 !important;
+    opacity: 0.2 !important;
+    top: -6px !important;
+    height: 39px !important;
+}
+
 pre.big-pre {
     font-size: 14px;
     padding-bottom: 14px;
