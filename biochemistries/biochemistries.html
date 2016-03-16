@@ -119,11 +119,15 @@ function zUrlParam(redirectURL) {
   }
 }
 
+function escapeFunkyUrlEncoding(encodedURL) {
+  return encodeURI(decodeURIComponent(encodedURL.replace(/\+/g, '%20')));
+}
+
 function unRedirectLinks() {
   var redir_links = document.querySelectorAll('a[href*="t.umblr.com/redirect"]');
   for (i = 0; i < redir_links.length; i++) {
     var zUrl = zUrlParam(redir_links[i].href);
-    if (zUrl != null) { redir_links[i].setAttribute('href', decodeURIComponent(zUrl)); }
+    if (zUrl != null) { redir_links[i].setAttribute('href', escapeFunkyUrlEncoding(zUrl)); }
   }
 }
 
