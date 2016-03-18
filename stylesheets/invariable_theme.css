@@ -447,6 +447,7 @@ blockquote blockquote {
 blockquote div {line-height:0px; padding-top:0px}
 blockquote div p{line-height:1em}
 blockquote p > sub{vertical-align: super;} /* sorry not sorry */
+blockquote ul li > sub { vertical-align: middle; } /* also sinful */
 div.source > p:first-child, div.source > h3:first-child, div.permalinkpage div.post_link > h1:first-child > a, div.post_link > h2:first-child > a {
     display: block;
     padding: 20px;
