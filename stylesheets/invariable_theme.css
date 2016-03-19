@@ -1674,6 +1674,11 @@ li.tumblelog_bonersnstuff {
     pointer-events: all;
 }
 
+div#feedly-mini {
+    margin-bottom: 35px;
+    margin-right: -7px;
+}
+
 .eek { display: none; }
 
 .nofl { clear: both; }
