@@ -141,6 +141,7 @@ pre.fig-cap.main-fig.inline-cap {
 	#page div.row {width:100% !important;}
 	iframe {width: inherit !important;}
 	#page {overflow-x: hidden;}
+	blockquote img { width: 100%; } /* Not !important, might want to override in style? */ 
 }
 
 @media only screen and (min-width: 1175px) {
