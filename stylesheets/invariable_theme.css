@@ -1873,3 +1873,7 @@ strong {
 
 h1,h2,h3,h4,h5,h6{font-style:normal;font-weight:normal;}
 hr{background-color: #B0CFC2;} #page.permalinkpage hr {width: 50%; margin: auto;}
+hr.hr-pad {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
