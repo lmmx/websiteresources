@@ -303,7 +303,7 @@ pre.fig-cap.main-fig.inline-cap {
 
 
 a img{border:none;}
-img.shadowed {
+img.shadowed, img.shadow-pad {
 -webkit-filter: drop-shadow(6px 6px 8px rgba(0,0,0,0.4));
 -moz-filter: drop-shadow(6px 6px 8px rgba(0,0,0,0.4));
 -o-filter: drop-shadow(6px 6px 8px rgba(0,0,0,0.4));
@@ -311,6 +311,10 @@ img.shadowed {
 Color='#444')";
 filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, 
 Color='#444')";
+}
+
+img.shadow-pad {
+	margin-bottom: 15px;
 }
 
 #twoCol {opacity:0.5;
