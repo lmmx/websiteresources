@@ -129,7 +129,7 @@ pre.fig-cap.main-fig.inline-cap {
 }
 
 #page.permalinkpage pre.glossary, #page.permalinkpage pre.fig-cap {
-    margin-left: 0;
+    margin-left: 131px; /* 0.5 x ( 500px - 238px ) ) */
     width: 217px;
     position: relative;
 }
@@ -141,7 +141,8 @@ pre.fig-cap.main-fig.inline-cap {
 	#page div.row {width:100% !important;}
 	iframe {width: inherit !important;}
 	#page {overflow-x: hidden;}
-	blockquote img { width: 100%; margin-right: initial !important; } /* width not !important, style can veto, margin necessary */ 
+	blockquote img { width: 100%; margin-right: initial !important; } /* width not !important, style can veto, margin necessary */
+	pre.glossary, pre.fig-cap { margin-left: 27px !important; }  /* should be 104 but 27 is safe down at min. width 292 */
 }
 
 @media only screen and (min-width: 1175px) {
