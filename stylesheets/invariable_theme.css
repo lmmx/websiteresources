@@ -314,7 +314,7 @@ Color='#444')";
 }
 
 img.shadow-pad {
-	margin-bottom: 15px;
+	margin-bottom: 15px !important;
 }
 
 #twoCol {opacity:0.5;
