@@ -15,7 +15,7 @@ var list = []
 nl = document.querySelectorAll('div div.thumbnail img')
 var lb_hint = (nl.length > 1) ? '<div id="lb_hint"><p>Use %u25C4/%u25BA to navigate</p></div>' : ''
 for(var i = 0, ll = nl.length; i != ll; list.push(nl[i++].outerHTML));
-        litbox.innerHTML = lb_hint;
+        litbox.innerHTML = unescape(lb_hint);
         litbox.innerHTML += list.join('').replace(/onclick="lightup\(/g,'id="i-').replace(/\)">/g,'">');
         document.getElementById('page').appendChild(litbox);
         for (num=0;num<n;num++) {
