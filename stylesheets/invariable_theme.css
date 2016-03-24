@@ -1076,6 +1076,29 @@ img[onclick*="lightup("] {
     cursor: -webkit-zoom-in;
 }
 
+div.lb_hint p {
+    color: white;
+}
+
+div.lb_hint {
+    width: 70px;
+    position: absolute;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 60px;
+    border: 20px solid black;
+    font-family: 'SEGOEUIL','Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    
+    -webkit-transition: all 0.2s;
+    moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
 #header #info{padding-top:0.9em;}
 #header #info a{color:black;}
 #header #info a:hover{text-decoration: none;}
