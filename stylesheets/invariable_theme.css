@@ -1086,7 +1086,7 @@ img[onclick*="lightup("] {
     left: 0.5rem;
     bottom: 0.5rem;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.75;
     border-radius: 60px;
     border: 20px solid black;
     font-family: 'SEGOEUIL','Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
