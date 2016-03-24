@@ -13,6 +13,7 @@ function centerpiece() {
         litbox.setAttribute('onclick','closelb();');
 var list = []
 nl = document.querySelectorAll('div div.thumbnail img')
+var lb_hint = (nl > 1) ? '<div id="lb_hint"><p>Use to navigate</p></div>' : ''
 for(var i = 0, ll = nl.length; i != ll; list.push(nl[i++].outerHTML));
         litbox.innerHTML = list.join('').replace(/onclick="lightup\(/g,'id="i-').replace(/\)">/g,'">');
         document.getElementById('page').appendChild(litbox);
@@ -48,11 +49,11 @@ hidn = hidlist.length;
 
     e = e || window.event;
 
-    if ((e.keyCode == '38' || e.keyCode == '37') && typeof document.querySelectorAll('div.lightboxed img')[hidn-1] !== 'undefined') {
+    if ((e.keyCode == '37') && typeof document.querySelectorAll('div.lightboxed img')[hidn-1] !== 'undefined') {
         document.querySelectorAll('div.lightboxed img')[hidn-1].removeAttribute('style');
         centerpiece();
     }
-    else if (e.keyCode == '39' || e.keyCode == '40') {
+    else if (e.keyCode == '39') {
         if (document.querySelectorAll('div.lightboxed img').length>hidn+1) {
         document.querySelectorAll('div.lightboxed img')[hidn].setAttribute('style','display:none');
         centerpiece();
