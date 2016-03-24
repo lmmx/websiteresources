@@ -1076,11 +1076,11 @@ img[onclick*="lightup("] {
     cursor: -webkit-zoom-in;
 }
 
-div.lb_hint p {
+#lb_hint p {
     color: white;
 }
 
-div.lb_hint {
+#lb_hint {
     width: 70px;
     position: absolute;
     left: 0.5rem;
