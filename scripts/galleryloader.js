@@ -13,7 +13,7 @@ function centerpiece() {
         litbox.setAttribute('onclick','closelb();');
 var list = []
 nl = document.querySelectorAll('div div.thumbnail img')
-var lb_hint = (nl.length > 1) ? '<div id="lb_hint"><p>Use to navigate</p></div>' : ''
+var lb_hint = (nl.length > 1) ? '<div id="lb_hint"><p>Use ◄/► to navigate</p></div>' : ''
 for(var i = 0, ll = nl.length; i != ll; list.push(nl[i++].outerHTML));
         litbox.innerHTML = lb_hint;
         litbox.innerHTML += list.join('').replace(/onclick="lightup\(/g,'id="i-').replace(/\)">/g,'">');
