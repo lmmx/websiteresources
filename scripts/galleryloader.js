@@ -13,9 +13,10 @@ function centerpiece() {
         litbox.setAttribute('onclick','closelb();');
 var list = []
 nl = document.querySelectorAll('div div.thumbnail img')
-var lb_hint = (nl > 1) ? '<div id="lb_hint"><p>Use to navigate</p></div>' : ''
+var lb_hint = (nl.length > 1) ? '<div id="lb_hint"><p>Use to navigate</p></div>' : ''
 for(var i = 0, ll = nl.length; i != ll; list.push(nl[i++].outerHTML));
-        litbox.innerHTML = list.join('').replace(/onclick="lightup\(/g,'id="i-').replace(/\)">/g,'">');
+        litbox.innerHTML = lb_hint;
+        litbox.innerHTML += list.join('').replace(/onclick="lightup\(/g,'id="i-').replace(/\)">/g,'">');
         document.getElementById('page').appendChild(litbox);
         for (num=0;num<n;num++) {
             document.querySelectorAll('div.lightboxed img')[num].setAttribute('style','display:none');
@@ -42,6 +43,10 @@ for(var i = 0, ll = nl.length; i != ll; list.push(nl[i++].outerHTML));
      }
      };
 
+function hideLBnav() {
+    document.querySelector('#lb_hint').style.opacity = 0;
+}
+
 function checkKey(e) {
     
 hidlist = document.querySelectorAll("div.lightboxed img[style='display:none']");
@@ -51,11 +56,13 @@ hidn = hidlist.length;
 
     if ((e.keyCode == '37') && typeof document.querySelectorAll('div.lightboxed img')[hidn-1] !== 'undefined') {
         document.querySelectorAll('div.lightboxed img')[hidn-1].removeAttribute('style');
+        hideLBnav();
         centerpiece();
     }
     else if (e.keyCode == '39') {
         if (document.querySelectorAll('div.lightboxed img').length>hidn+1) {
         document.querySelectorAll('div.lightboxed img')[hidn].setAttribute('style','display:none');
+        hideLBnav();
         centerpiece();
         }
     }
