@@ -139,7 +139,7 @@ pre.fig-cap.main-fig.inline-cap {
 	#page .post{width:95% !important;} /* Slightly bad design with overflow padding cut off  */
 	#content #notes{width: 100% !important;}
 	#page div.row {width:100% !important;}
-	#content .post_quote h1.long { font-size: 2.2em; }
+	#content .post_quote h1.long { font-size: 2.4em !important; }
 	iframe {width: inherit !important;}
 	#page {overflow-x: hidden;}
 	blockquote img { width: 100%; margin-right: initial !important; } /* width not !important, style can veto, margin necessary */
