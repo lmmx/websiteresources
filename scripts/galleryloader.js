@@ -37,7 +37,8 @@ for(var i = 0, ll = nl.length; i != ll; list.push(nl[i++].outerHTML));
     var photosetPics = document.querySelectorAll('div div.thumbnail img')
     for (i=0;i<photosetPics.length;i++) {
       var imgLink = photosetPics[i].src;
-      newcode = '<a class="lightbox" onclick="return false;">  <img src="'+imgLink+'" onclick="lightup('+i+')"></a>'
+      newcode = '<a class="lightbox" onclick="return false;">  <img src="'+imgLink+
+                '" onclick="lightup('+i+'); return false;"></a>'
       photosetPics[i].parentNode.innerHTML = newcode;
     }
      }
